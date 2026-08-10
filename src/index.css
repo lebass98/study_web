@@ -84,6 +84,27 @@
     font-family: "SF Mono", "Fira Code", Menlo, Monaco, Consolas, monospace;
     letter-spacing: 0;
   }
+
+  /* React Official Doc Code Block Style (Light off-white background, rounded-3xl, soft border) */
+  pre {
+    background-color: #f8f9fa !important;
+    color: #2d3748 !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-radius: 1.5rem !important; /* rounded-3xl */
+    padding: 1.75rem 2rem !important;
+    margin-top: 1.75rem !important;
+    margin-bottom: 1.75rem !important;
+    overflow-x: auto !important;
+    font-size: 1rem !important;
+    line-height: 1.8 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+  }
+
+  .dark pre {
+    background-color: #1c1d22 !important;
+    color: #f1f5f9 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
 }
 
 /* ==========================================================================
