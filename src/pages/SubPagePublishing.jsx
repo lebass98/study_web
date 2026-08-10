@@ -64,7 +64,7 @@ export default function SubPagePublishing({ onSelectRoute }) {
         <figure className="my-6 not-prose">
           <div className="rounded-2xl overflow-hidden group hover:scale-[1.008] transition-transform duration-300">
             <img
-              src="/images/section05_frontend_tech.jpeg"
+              src="./images/section05_frontend_tech.jpeg"
               alt="HTML, CSS, JavaScript의 세 가지 기술 역할 비교도"
               className="w-full h-auto object-contain max-h-[440px] mx-auto block"
             />

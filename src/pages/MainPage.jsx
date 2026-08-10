@@ -71,9 +71,9 @@ export default function MainPage({ onSelectRoute }) {
         <figure className="my-6 not-prose">
           <div className="rounded-2xl overflow-hidden group hover:scale-[1.008] transition-transform duration-300">
             <img
-              src="/images/section01_summary.png"
-              alt="웹 개발 핵심 요약 구조도"
-              className="w-full h-auto object-contain max-h-[340px] mx-auto block"
+              src="./images/section01_summary.png"
+              alt="식당 예시로 비유한 웹 서비스 한 줄 요약 개념도"
+              className="w-full h-auto object-contain max-h-[440px] mx-auto block"
             />
           </div>
           <figcaption className="mt-2.5 text-center text-xs text-slate-500 dark:text-slate-400 flex items-center justify-center gap-1.5 font-medium">
@@ -128,8 +128,8 @@ export default function MainPage({ onSelectRoute }) {
         <figure className="my-6 not-prose">
           <div className="rounded-2xl overflow-hidden group hover:scale-[1.008] transition-transform duration-300">
             <img
-              src="/images/section02_workflow.jpeg"
-              alt="웹 서비스 전체 6단계 흐름도"
+              src="./images/section02_workflow.jpeg"
+              alt="웹 서비스 6단계 동작 프로세스 종합 지도"
               className="w-full h-auto object-contain max-h-[440px] mx-auto block"
             />
           </div>
@@ -180,9 +180,9 @@ export default function MainPage({ onSelectRoute }) {
         <figure className="my-6 not-prose">
           <div className="rounded-2xl overflow-hidden group hover:scale-[1.008] transition-transform duration-300">
             <img
-              src="/images/section03_web.png"
-              alt="웹이란 무엇인가 시스템 연동 그림"
-              className="w-full h-auto object-contain max-h-[340px] mx-auto block"
+              src="./images/section03_web.png"
+              alt="인터넷망을 통해 클라이언트와 서버가 연결되는 웹 구조 개념도"
+              className="w-full h-auto object-contain max-h-[440px] mx-auto block"
             />
           </div>
           <figcaption className="mt-2.5 text-center text-xs text-slate-500 dark:text-slate-400 flex items-center justify-center gap-1.5 font-medium">
@@ -216,9 +216,9 @@ export default function MainPage({ onSelectRoute }) {
         <figure className="my-6 not-prose">
           <div className="rounded-2xl overflow-hidden group hover:scale-[1.008] transition-transform duration-300">
             <img
-              src="/images/section04_client_server.png"
-              alt="클라이언트와 서버 역할 비교도"
-              className="w-full h-auto object-contain max-h-[360px] mx-auto block"
+              src="./images/section04_client_server.png"
+              alt="클라이언트와 서버의 역할 및 데이터 송수신 흐름 비교도"
+              className="w-full h-auto object-contain max-h-[440px] mx-auto block"
             />
           </div>
           <figcaption className="mt-2.5 text-center text-xs text-slate-500 dark:text-slate-400 flex items-center justify-center gap-1.5 font-medium">
