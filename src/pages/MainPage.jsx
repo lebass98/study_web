@@ -3,6 +3,11 @@ import Callout from '../components/Callout';
 import { ArrowRight, Monitor, Server, Database, Globe, Zap, CheckCircle2, Play, Sparkles, ShoppingCart, Image as ImageIcon } from 'lucide-react';
 import { triggerHaptic } from '../utils/appleHaptics';
 
+import imgSummary from '../assets/images/section01_summary.png';
+import imgWorkflow from '../assets/images/section02_workflow.jpeg';
+import imgWeb from '../assets/images/section03_web.png';
+import imgClientServer from '../assets/images/section04_client_server.png';
+
 export default function MainPage({ onSelectRoute }) {
   // Simulator State
   const [simStep, setSimStep] = useState(0);
@@ -71,7 +76,7 @@ export default function MainPage({ onSelectRoute }) {
         <figure className="my-6 not-prose">
           <div className="rounded-2xl overflow-hidden group hover:scale-[1.008] transition-transform duration-300">
             <img
-              src="./images/section01_summary.png"
+              src={imgSummary}
               alt="식당 예시로 비유한 웹 서비스 한 줄 요약 개념도"
               className="w-full h-auto object-contain max-h-[440px] mx-auto block"
             />
@@ -128,7 +133,7 @@ export default function MainPage({ onSelectRoute }) {
         <figure className="my-6 not-prose">
           <div className="rounded-2xl overflow-hidden group hover:scale-[1.008] transition-transform duration-300">
             <img
-              src="./images/section02_workflow.jpeg"
+              src={imgWorkflow}
               alt="웹 서비스 6단계 동작 프로세스 종합 지도"
               className="w-full h-auto object-contain max-h-[440px] mx-auto block"
             />
@@ -180,7 +185,7 @@ export default function MainPage({ onSelectRoute }) {
         <figure className="my-6 not-prose">
           <div className="rounded-2xl overflow-hidden group hover:scale-[1.008] transition-transform duration-300">
             <img
-              src="./images/section03_web.png"
+              src={imgWeb}
               alt="인터넷망을 통해 클라이언트와 서버가 연결되는 웹 구조 개념도"
               className="w-full h-auto object-contain max-h-[440px] mx-auto block"
             />
@@ -216,7 +221,7 @@ export default function MainPage({ onSelectRoute }) {
         <figure className="my-6 not-prose">
           <div className="rounded-2xl overflow-hidden group hover:scale-[1.008] transition-transform duration-300">
             <img
-              src="./images/section04_client_server.png"
+              src={imgClientServer}
               alt="클라이언트와 서버의 역할 및 데이터 송수신 흐름 비교도"
               className="w-full h-auto object-contain max-h-[440px] mx-auto block"
             />
