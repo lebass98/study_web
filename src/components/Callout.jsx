@@ -4,51 +4,39 @@ import { Info, Lightbulb, AlertTriangle, AlertCircle } from 'lucide-react';
 export default function Callout({ type = 'note', title, children }) {
   const configs = {
     note: {
-      border: 'border-blue-500/40 dark:border-blue-400/30',
-      bg: 'bg-blue-50/70 dark:bg-blue-950/30',
-      text: 'text-blue-900 dark:text-blue-100',
-      iconColor: 'text-blue-600 dark:text-blue-400',
+      accentColor: 'text-sky-600 dark:text-sky-400',
       Icon: Info,
-      defaultTitle: '노트 (Note)',
+      defaultTitle: '학습 내용 / 참고 사항',
     },
     tip: {
-      border: 'border-emerald-500/40 dark:border-emerald-400/30',
-      bg: 'bg-emerald-50/70 dark:bg-emerald-950/30',
-      text: 'text-emerald-900 dark:text-emerald-100',
-      iconColor: 'text-emerald-600 dark:text-emerald-400',
+      accentColor: 'text-emerald-600 dark:text-emerald-400',
       Icon: Lightbulb,
-      defaultTitle: '팁 (Tip)',
+      defaultTitle: '핵심 요약 팁',
     },
     warning: {
-      border: 'border-amber-500/40 dark:border-amber-400/30',
-      bg: 'bg-amber-50/70 dark:bg-amber-950/30',
-      text: 'text-amber-900 dark:text-amber-100',
-      iconColor: 'text-amber-600 dark:text-amber-400',
+      accentColor: 'text-amber-600 dark:text-amber-400',
       Icon: AlertTriangle,
-      defaultTitle: '주의 (Warning)',
+      defaultTitle: '주의 사항',
     },
     caution: {
-      border: 'border-rose-500/40 dark:border-rose-400/30',
-      bg: 'bg-rose-50/70 dark:bg-rose-950/30',
-      text: 'text-rose-900 dark:text-rose-100',
-      iconColor: 'text-rose-600 dark:text-rose-400',
+      accentColor: 'text-rose-600 dark:text-rose-400',
       Icon: AlertCircle,
-      defaultTitle: '경고 (Caution)',
+      defaultTitle: '경고',
     },
   };
 
   const config = configs[type] || configs.note;
-  const { border, bg, text, iconColor, Icon, defaultTitle } = config;
+  const { accentColor, Icon, defaultTitle } = config;
 
   return (
-    <div className={`my-8 sm:my-10 border-l-4 rounded-r-2xl p-5 sm:p-6 ${border} ${bg} ${text} shadow-sm transition-all duration-200`}>
-      <div className="flex items-center gap-2.5 mb-3">
-        <Icon className={`w-5 h-5 ${iconColor} shrink-0`} />
-        <h4 className="font-semibold text-base sm:text-lg tracking-tight">
+    <div className="my-8 sm:my-10 p-6 sm:p-8 rounded-3xl bg-[#f8f9fa] dark:bg-[#1c1d22] border border-slate-200/80 dark:border-slate-800/80 transition-all duration-200 not-prose">
+      <div className="flex items-center gap-3 mb-4">
+        <Icon className={`w-5 h-5 ${accentColor} shrink-0`} />
+        <h3 className="font-bold text-xl sm:text-2xl tracking-tight text-slate-900 dark:text-slate-100">
           {title || defaultTitle}
-        </h4>
+        </h3>
       </div>
-      <div className="text-sm sm:text-base leading-loose opacity-95 space-y-3">
+      <div className="text-base sm:text-lg leading-relaxed text-slate-700 dark:text-slate-300 space-y-3">
         {children}
       </div>
     </div>
