@@ -141,50 +141,50 @@ export default function SubPagePlanning({ onSelectRoute }) {
           버튼을 눌러 웹 페이지의 와이어프레임 요소를 직접 추가해보세요! 
         </p>
 
-        <div className="not-prose my-6 p-6 rounded-3xl border border-slate-200/80 dark:border-white/10 bg-slate-900/95 dark:bg-slate-950/90 text-slate-100 shadow-2xl backdrop-blur-xl">
-          <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
-            <span className="font-bold text-sm text-cyan-400">화면설계서(Wireframe) 빌더 실습</span>
-            <span className="text-xs text-slate-400">요소 개수: {elements.length}개</span>
+        <div className="not-prose my-6 p-6 rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-[#f8f9fa] dark:bg-[#1c1d22] text-slate-800 dark:text-slate-100 shadow-sm">
+          <div className="flex items-center justify-between border-b border-slate-200/80 dark:border-slate-800 pb-3 mb-4">
+            <span className="font-bold text-sm sm:text-base text-cyan-600 dark:text-cyan-400">화면설계서(Wireframe) 빌더 실습</span>
+            <span className="text-xs text-slate-500 dark:text-slate-400">요소 개수: {elements.length}개</span>
           </div>
 
           <div className="flex flex-wrap gap-2 mb-6">
             <button
               onClick={() => addElement('header', '상단 헤더')}
-              className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-medium text-xs flex items-center gap-1 apple-btn cursor-pointer"
+              className="px-3 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-white font-medium text-xs flex items-center gap-1.5 apple-btn cursor-pointer shadow-xs"
             >
-              <Plus className="w-3.5 h-3.5 text-cyan-400" /> 헤더 추가
+              <Plus className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" /> 헤더 추가
             </button>
             <button
               onClick={() => addElement('banner', '메인 서비스 카드')}
-              className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-medium text-xs flex items-center gap-1 apple-btn cursor-pointer"
+              className="px-3 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-white font-medium text-xs flex items-center gap-1.5 apple-btn cursor-pointer shadow-xs"
             >
-              <Plus className="w-3.5 h-3.5 text-purple-400" /> 카드 블록 추가
+              <Plus className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" /> 카드 블록 추가
             </button>
             <button
               onClick={() => addElement('button', 'CTA 신청 버튼')}
-              className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-medium text-xs flex items-center gap-1 apple-btn cursor-pointer"
+              className="px-3 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-white font-medium text-xs flex items-center gap-1.5 apple-btn cursor-pointer shadow-xs"
             >
-              <Plus className="w-3.5 h-3.5 text-emerald-400" /> 버튼 요소 추가
+              <Plus className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" /> 버튼 요소 추가
             </button>
           </div>
 
           {/* Wireframe Preview Canvas */}
-          <div className="p-4 rounded-2xl bg-slate-950 border border-slate-800 min-h-[200px] space-y-2">
+          <div className="p-4 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800 min-h-[200px] space-y-2">
             {elements.map((item) => (
               <div
                 key={item.id}
-                className="p-3 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-between text-xs animate-in fade-in"
+                className="p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 flex items-center justify-between text-xs animate-in fade-in"
               >
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-cyan-400"></span>
-                  <span className="font-semibold text-slate-200">{item.title}</span>
-                  <span className="text-[10px] text-slate-500 font-mono">[{item.type}]</span>
+                  <span className="w-2 h-2 rounded-full bg-cyan-500"></span>
+                  <span className="font-semibold text-slate-800 dark:text-slate-200">{item.title}</span>
+                  <span className="text-[10px] text-slate-400 font-mono">[{item.type}]</span>
                 </div>
                 <button
                   onClick={() => removeElement(item.id)}
-                  className="text-slate-500 hover:text-rose-400 p-1 apple-btn cursor-pointer"
+                  className="text-slate-400 hover:text-rose-500 p-1 apple-btn cursor-pointer"
                 >
-                  <Trash2 className="w-3.5 h-3.5" />
+                  <Trash2 className="w-4 h-4" />
                 </button>
               </div>
             ))}

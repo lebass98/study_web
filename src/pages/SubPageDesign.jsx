@@ -92,19 +92,19 @@ export default function SubPageDesign({ onSelectRoute }) {
           아래 토큰 조절기에서 색상, 둥글기(Border Radius), 폰트 크기를 조절하여 우측 컴포넌트 디자인이 어떻게 변하는지 체득해보세요!
         </p>
 
-        <div className="not-prose my-6 p-6 rounded-3xl border border-slate-200/80 dark:border-white/10 bg-slate-900/95 dark:bg-slate-950/90 text-slate-100 shadow-2xl backdrop-blur-xl">
-          <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-6">
+        <div className="not-prose my-6 p-6 rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-[#f8f9fa] dark:bg-[#1c1d22] text-slate-800 dark:text-slate-100 shadow-sm">
+          <div className="flex items-center justify-between border-b border-slate-200/80 dark:border-slate-800 pb-3 mb-6">
             <div className="flex items-center gap-2">
-              <Sliders className="w-5 h-5 text-pink-400" />
-              <span className="font-bold text-sm">Design Tokens 실시간 인터랙션 실습</span>
+              <Sliders className="w-5 h-5 text-pink-600 dark:text-pink-400" />
+              <span className="font-bold text-sm sm:text-base text-slate-900 dark:text-slate-100">Design Tokens 실시간 인터랙션 실습</span>
             </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Control Panel */}
-            <div className="space-y-4 bg-slate-950 p-4 rounded-2xl border border-slate-800">
+            <div className="space-y-4 bg-white dark:bg-slate-950 p-5 rounded-2xl border border-slate-200/80 dark:border-slate-800">
               <div>
-                <label className="block text-xs font-bold text-slate-300 mb-2">
+                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-2">
                   주 테마 색상 (Primary Color Token)
                 </label>
                 <div className="flex items-center gap-3">
@@ -117,7 +117,7 @@ export default function SubPageDesign({ onSelectRoute }) {
                       }}
                       style={{ backgroundColor: color }}
                       className={`w-7 h-7 rounded-full flex items-center justify-center transition-transform cursor-pointer apple-btn ${
-                        primaryColor === color ? 'scale-125 ring-2 ring-white' : ''
+                        primaryColor === color ? 'scale-125 ring-2 ring-slate-400 dark:ring-white' : ''
                       }`}
                     >
                       {primaryColor === color && <Check className="w-4 h-4 text-white" />}
@@ -127,8 +127,8 @@ export default function SubPageDesign({ onSelectRoute }) {
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-300 mb-2">
-                  모서리 둥글기 (Border Radius): <span className="font-mono text-cyan-400">{borderRadius}</span>
+                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-2">
+                  모서리 둥글기 (Border Radius): <span className="font-mono text-cyan-600 dark:text-cyan-400">{borderRadius}</span>
                 </label>
                 <div className="flex gap-2">
                   {['2px', '8px', '16px', '9999px'].map((r) => (
@@ -139,7 +139,7 @@ export default function SubPageDesign({ onSelectRoute }) {
                         setBorderRadius(r);
                       }}
                       className={`px-3 py-1 rounded-xl text-xs border font-mono apple-btn cursor-pointer ${
-                        borderRadius === r ? 'border-pink-500 text-pink-400 bg-pink-950/30' : 'border-slate-800 text-slate-400'
+                        borderRadius === r ? 'border-pink-500 text-pink-600 dark:text-pink-400 bg-pink-50 dark:bg-pink-950/30' : 'border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400'
                       }`}
                     >
                       {r}
@@ -149,8 +149,8 @@ export default function SubPageDesign({ onSelectRoute }) {
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-300 mb-2">
-                  폰트 크기 (Font Size): <span className="font-mono text-cyan-400">{fontSize}</span>
+                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-2">
+                  폰트 크기 (Font Size): <span className="font-mono text-cyan-600 dark:text-cyan-400">{fontSize}</span>
                 </label>
                 <div className="flex gap-2">
                   {['12px', '14px', '16px', '18px'].map((fs) => (
@@ -161,7 +161,7 @@ export default function SubPageDesign({ onSelectRoute }) {
                         setFontSize(fs);
                       }}
                       className={`px-3 py-1 rounded-xl text-xs border font-mono apple-btn cursor-pointer ${
-                        fontSize === fs ? 'border-pink-500 text-pink-400 bg-pink-950/30' : 'border-slate-800 text-slate-400'
+                        fontSize === fs ? 'border-pink-500 text-pink-600 dark:text-pink-400 bg-pink-50 dark:bg-pink-950/30' : 'border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400'
                       }`}
                     >
                       {fs}
@@ -172,9 +172,9 @@ export default function SubPageDesign({ onSelectRoute }) {
             </div>
 
             {/* Live Component Preview */}
-            <div className="bg-slate-950 p-6 rounded-2xl border border-slate-800 flex flex-col justify-center items-center">
-              <div className="w-full max-w-sm p-5 bg-slate-900 border border-slate-800 rounded-2xl space-y-3">
-                <div className="text-xs text-slate-400 font-mono">라이브 컴포넌트 미리보기</div>
+            <div className="bg-white dark:bg-slate-950 p-6 rounded-2xl border border-slate-200/80 dark:border-slate-800 flex flex-col justify-center items-center">
+              <div className="w-full max-w-sm p-5 bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-2xl space-y-3">
+                <div className="text-xs text-slate-500 dark:text-slate-400 font-mono">라이브 컴포넌트 미리보기</div>
 
                 <button
                   style={{

@@ -322,16 +322,16 @@ export default function MainPage({ onSelectRoute }) {
           아래 시뮬레이터에서 <strong>[장바구니 담기]</strong> 버튼을 클릭하고 손님(브라우저) ➔ 웨이터(API) ➔ 주방(서버) ➔ 창고(DB) 순서로 신호가 이동하는 과정을 직접 확인해 보세요!
         </p>
 
-        <div className="not-prose my-6 p-6 rounded-3xl border border-slate-200/80 dark:border-white/10 bg-slate-900/95 dark:bg-slate-950/90 text-slate-100 shadow-2xl backdrop-blur-xl">
+        <div className="not-prose my-6 p-6 rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-[#f8f9fa] dark:bg-[#1c1d22] text-slate-800 dark:text-slate-100 shadow-sm">
           {/* Top Bar */}
-          <div className="flex items-center justify-between pb-4 mb-6 border-b border-slate-800">
+          <div className="flex items-center justify-between pb-4 mb-6 border-b border-slate-200/80 dark:border-slate-800">
             <div className="flex items-center gap-2">
-              <ShoppingCart className="w-5 h-5 text-cyan-400" />
-              <span className="font-bold text-sm">쇼핑몰 장바구니 주문 체험 시뮬레이터</span>
+              <ShoppingCart className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
+              <span className="font-bold text-sm sm:text-base text-slate-900 dark:text-slate-100">쇼핑몰 장바구니 주문 체험 시뮬레이터</span>
             </div>
             <div className="flex items-center gap-3">
-              <span className="text-xs text-slate-400">담긴 상품:</span>
-              <span className="px-3 py-1 rounded-full bg-cyan-500 text-slate-950 font-bold text-xs font-mono transition-transform duration-300 scale-110">
+              <span className="text-xs text-slate-500 dark:text-slate-400">담긴 상품:</span>
+              <span className="px-3 py-1 rounded-full bg-cyan-600 text-white font-bold text-xs font-mono transition-transform duration-300 scale-110">
                 {cartItems}개
               </span>
             </div>
@@ -342,13 +342,13 @@ export default function MainPage({ onSelectRoute }) {
             <button
               onClick={handleSimulateCart}
               disabled={simStep > 0 && simStep < 4}
-              className="px-5 py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 disabled:bg-slate-800 text-white font-bold text-xs flex items-center gap-2 transition-all apple-btn cursor-pointer shadow-lg shadow-cyan-600/20"
+              className="px-5 py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 disabled:bg-slate-300 dark:disabled:bg-slate-800 text-white font-bold text-xs flex items-center gap-2 transition-all apple-btn cursor-pointer shadow-md"
             >
               <Play className="w-4 h-4" /> [손님] 장바구니 담기 버튼 누르기!
             </button>
             <button
               onClick={handleResetSim}
-              className="px-4 py-2.5 rounded-xl border border-slate-700 text-slate-400 hover:text-slate-200 text-xs font-semibold apple-btn cursor-pointer"
+              className="px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-100 text-xs font-semibold apple-btn cursor-pointer"
             >
               시뮬레이션 초기화
             </button>
@@ -356,30 +356,30 @@ export default function MainPage({ onSelectRoute }) {
 
           {/* Flow Diagram Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-            <div className={`p-4 rounded-2xl border transition-all duration-300 ${simStep >= 1 ? 'border-cyan-500 bg-cyan-950/40 scale-[1.02]' : 'border-slate-800 bg-slate-950/40'}`}>
-              <div className="text-xs font-mono text-cyan-400 font-bold mb-1">1. 손님 테이블 (브라우저)</div>
-              <div className="text-sm font-semibold text-white">주문서 작성 (HTTP 요청)</div>
-              <p className="text-[11px] text-slate-400 mt-1">버튼 클릭 ➔ "셔츠 담아주세요!"</p>
+            <div className={`p-4 rounded-2xl border transition-all duration-300 ${simStep >= 1 ? 'border-cyan-500 bg-cyan-50 dark:bg-cyan-950/40 scale-[1.02]' : 'border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900'}`}>
+              <div className="text-xs font-mono text-cyan-600 dark:text-cyan-400 font-bold mb-1">1. 손님 테이블 (브라우저)</div>
+              <div className="text-sm font-semibold text-slate-900 dark:text-white">주문서 작성 (HTTP 요청)</div>
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">버튼 클릭 ➔ "셔츠 담아주세요!"</p>
             </div>
 
-            <div className={`p-4 rounded-2xl border transition-all duration-300 ${simStep >= 2 ? 'border-purple-500 bg-purple-950/40 scale-[1.02]' : 'border-slate-800 bg-slate-950/40'}`}>
-              <div className="text-xs font-mono text-purple-400 font-bold mb-1">2. 요리 주방 (서버)</div>
-              <div className="text-sm font-semibold text-white">주문 검사 & 승인</div>
-              <p className="text-[11px] text-slate-400 mt-1">로그인 확인 ➔ 창고 연결</p>
+            <div className={`p-4 rounded-2xl border transition-all duration-300 ${simStep >= 2 ? 'border-purple-500 bg-purple-50 dark:bg-purple-950/40 scale-[1.02]' : 'border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900'}`}>
+              <div className="text-xs font-mono text-purple-600 dark:text-purple-400 font-bold mb-1">2. 요리 주방 (서버)</div>
+              <div className="text-sm font-semibold text-slate-900 dark:text-white">주문 검사 & 승인</div>
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">로그인 확인 ➔ 창고 연결</p>
             </div>
 
-            <div className={`p-4 rounded-2xl border transition-all duration-300 ${simStep >= 3 ? 'border-emerald-500 bg-emerald-950/40 scale-[1.02]' : 'border-slate-800 bg-slate-950/40'}`}>
-              <div className="text-xs font-mono text-emerald-400 font-bold mb-1">3. 재고 창고 (데이터베이스)</div>
-              <div className="text-sm font-semibold text-white">장바구니 1건 저장</div>
-              <p className="text-[11px] text-slate-400 mt-1">손님 회원 장바구니 DB 업데이트</p>
+            <div className={`p-4 rounded-2xl border transition-all duration-300 ${simStep >= 3 ? 'border-emerald-500 bg-emerald-50 dark:bg-emerald-950/40 scale-[1.02]' : 'border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900'}`}>
+              <div className="text-xs font-mono text-emerald-600 dark:text-emerald-400 font-bold mb-1">3. 재고 창고 (데이터베이스)</div>
+              <div className="text-sm font-semibold text-slate-900 dark:text-white">장바구니 1건 저장</div>
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">손님 회원 장바구니 DB 업데이트</p>
             </div>
           </div>
 
           {/* Console Log Window */}
-          <div className="p-4 rounded-2xl bg-slate-950 font-mono text-xs text-slate-300 space-y-1.5 border border-slate-800">
-            <div className="text-[10px] text-slate-500 mb-1 font-sans">실시간 주문 이동 로그:</div>
+          <div className="p-4 rounded-2xl bg-white dark:bg-slate-950 font-mono text-xs text-slate-800 dark:text-slate-300 space-y-1.5 border border-slate-200/80 dark:border-slate-800">
+            <div className="text-xs text-slate-500 mb-1 font-sans font-semibold">실시간 주문 이동 로그:</div>
             {simLogs.map((log, idx) => (
-              <div key={idx} className="text-cyan-300 animate-in fade-in duration-300">
+              <div key={idx} className="text-cyan-700 dark:text-cyan-300 animate-in fade-in duration-300">
                 {log}
               </div>
             ))}

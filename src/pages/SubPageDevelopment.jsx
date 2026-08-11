@@ -98,7 +98,7 @@ export default function SubPageDevelopment({ onSelectRoute }) {
           HTML이 뼈대, CSS가 옷이라면 JavaScript는 근육과 신경계입니다. 버튼을 눌렀을 때 팝업 창이 열리거나 서버에서 데이터를 가져오는 동작을 실행합니다.
         </p>
 
-        <div className="my-4 p-4 rounded-2xl border border-slate-200/80 dark:border-white/10 bg-slate-900 font-mono text-xs text-slate-200">
+        <div className="my-4 p-5 rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-[#f8f9fa] dark:bg-[#1c1d22] font-mono text-sm text-slate-800 dark:text-slate-200">
           <pre>{`// 버튼 클릭 시 실행되는 이벤트 핸들러
 document.querySelector('button').addEventListener('click', () => {
   alert('장바구니에 상품이 담겼습니다!');
@@ -147,36 +147,36 @@ document.querySelector('button').addEventListener('click', () => {
           아래 회원가입 양식에서 이름과 이메일을 입력한 뒤 <strong>[회원가입 요청]</strong> 버튼을 클릭하여 API 통신과 DB 저장 과정을 실시간으로 확인해 보세요!
         </p>
 
-        <div className="not-prose my-6 p-6 rounded-3xl border border-slate-200/80 dark:border-white/10 bg-slate-900/95 dark:bg-slate-950/90 text-slate-100 shadow-2xl backdrop-blur-xl">
-          <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-6">
+        <div className="not-prose my-6 p-6 rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-[#f8f9fa] dark:bg-[#1c1d22] text-slate-800 dark:text-slate-100 shadow-sm">
+          <div className="flex items-center justify-between border-b border-slate-200/80 dark:border-slate-800 pb-3 mb-6">
             <div className="flex items-center gap-2">
-              <UserPlus className="w-5 h-5 text-emerald-400" />
-              <span className="font-bold text-sm">회원가입 API & DB 통신 실습</span>
+              <UserPlus className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+              <span className="font-bold text-sm sm:text-base text-slate-900 dark:text-slate-100">회원가입 API & DB 통신 실습</span>
             </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Left Form */}
-            <form onSubmit={handleRegister} className="space-y-4 bg-slate-950 p-4 rounded-2xl border border-slate-800">
+            <form onSubmit={handleRegister} className="space-y-4 bg-white dark:bg-slate-950 p-5 rounded-2xl border border-slate-200/80 dark:border-slate-800">
               <div>
-                <label className="block text-xs font-bold text-slate-300 mb-1">이름 (Name)</label>
+                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">이름 (Name)</label>
                 <input
                   type="text"
                   value={userName}
                   onChange={(e) => setUserName(e.target.value)}
                   placeholder="예: 홍길동"
-                  className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
+                  className="w-full px-3.5 py-2.5 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-sm text-slate-800 dark:text-white placeholder-slate-400 focus:outline-none focus:border-emerald-500"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-300 mb-1">이메일 (Email)</label>
+                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">이메일 (Email)</label>
                 <input
                   type="email"
                   value={userEmail}
                   onChange={(e) => setUserEmail(e.target.value)}
                   placeholder="example@domain.com"
-                  className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
+                  className="w-full px-3.5 py-2.5 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-sm text-slate-800 dark:text-white placeholder-slate-400 focus:outline-none focus:border-emerald-500"
                 />
               </div>
 
@@ -187,26 +187,26 @@ document.querySelector('button').addEventListener('click', () => {
                 회원가입 요청 (POST /api/users)
               </button>
 
-              <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 font-mono text-[11px] text-cyan-300">
+              <div className="p-3.5 rounded-xl bg-cyan-50 dark:bg-slate-900 border border-cyan-200 dark:border-slate-800 font-mono text-xs text-cyan-800 dark:text-cyan-300">
                 상태: {apiStatus}
               </div>
             </form>
 
             {/* Right DB Table Preview */}
-            <div className="bg-slate-950 p-4 rounded-2xl border border-slate-800">
-              <div className="flex items-center gap-2 mb-3 text-xs font-bold text-slate-300">
-                <Database className="w-4 h-4 text-emerald-400" />
+            <div className="bg-white dark:bg-slate-950 p-5 rounded-2xl border border-slate-200/80 dark:border-slate-800">
+              <div className="flex items-center gap-2 mb-3 text-xs font-bold text-slate-700 dark:text-slate-300">
+                <Database className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                 <span>데이터베이스 테이블 (`users` Table Live)</span>
               </div>
 
               <div className="space-y-2">
                 {registeredUsers.map((u) => (
-                  <div key={u.id} className="p-3 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-between text-xs animate-in fade-in">
+                  <div key={u.id} className="p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 flex items-center justify-between text-xs animate-in fade-in">
                     <div>
-                      <span className="font-bold text-slate-200">{u.name}</span>
-                      <span className="text-slate-400 block text-[11px]">{u.email}</span>
+                      <span className="font-bold text-slate-800 dark:text-slate-200">{u.name}</span>
+                      <span className="text-slate-500 dark:text-slate-400 block text-[11px]">{u.email}</span>
                     </div>
-                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 font-mono">
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-mono font-semibold">
                       SAVED
                     </span>
                   </div>

@@ -112,7 +112,7 @@ export default function SubPagePublishing({ onSelectRoute }) {
           HTML은 웹 페이지에 들어갈 제목, 문단, 버튼, 이미지 등의 태그 요소를 정의합니다.
         </p>
 
-        <div className="my-4 p-4 rounded-2xl border border-slate-200/80 dark:border-white/10 bg-slate-900 font-mono text-xs text-slate-200">
+        <div className="my-4 p-5 rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-[#f8f9fa] dark:bg-[#1c1d22] font-mono text-sm text-slate-800 dark:text-slate-200">
           <pre>{`<h1>상품 상세 페이지</h1>
 <p>여름용 프리미엄 셔츠입니다.</p>
 <button>장바구니 담기</button>`}</pre>
@@ -133,7 +133,7 @@ export default function SubPagePublishing({ onSelectRoute }) {
           CSS는 HTML 태그들에 색상, 여백(Padding/Margin), 정렬(Flexbox), 모서리 둥글기 등을 입혀 예쁜 디자인을 만듭니다.
         </p>
 
-        <div className="my-4 p-4 rounded-2xl border border-slate-200/80 dark:border-white/10 bg-slate-900 font-mono text-xs text-slate-200">
+        <div className="my-4 p-5 rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-[#f8f9fa] dark:bg-[#1c1d22] font-mono text-sm text-slate-800 dark:text-slate-200">
           <pre>{`button {
   background-color: #0284c7;
   color: white;
