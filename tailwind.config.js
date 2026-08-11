@@ -18,7 +18,8 @@ export default {
       },
       fontFamily: {
         sans: [
-          'Optimistic Display',
+          'Pretendard Variable',
+          'Pretendard',
           '-apple-system',
           'BlinkMacSystemFont',
           'Segoe UI',
