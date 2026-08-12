@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { sidebarCategories } from '../data/navigationData';
 import { ChevronRight, ChevronDown } from 'lucide-react';
 import { triggerHaptic } from '../utils/appleHaptics';
@@ -9,90 +9,127 @@ export default function Sidebar({
   isMobileOpen, 
   onCloseMobile 
 }) {
-  // Track open state for collapsible categories
-  const [openCategories, setOpenCategories] = useState(() => {
-    // Default open all or open current active category
-    const initial = {};
-    sidebarCategories.forEach(cat => {
-      initial[cat.id] = true;
-    });
-    return initial;
-  });
-
-  const toggleCategory = (catId) => {
-    triggerHaptic('light');
-    setOpenCategories(prev => ({
-      ...prev,
-      [catId]: !prev[catId]
-    }));
+  // Helper to remove any remaining numbers from title string (failsafe)
+  const stripNumbers = (text) => {
+    if (!text) return '';
+    return text.replace(/^[0-9]+\.\s*/, '');
   };
 
-  const getCategoryMainPath = (cat) => {
-    const mainItem = cat.items.find(item => item.isMain) || cat.items[0];
-    return mainItem ? mainItem.path : '/';
+  // Find category ID matching current path
+  const findActiveCatId = (path) => {
+    const basePath = path.split('#')[0] || '/';
+    for (const cat of sidebarCategories) {
+      if (cat.items.some(item => (item.path.split('#')[0] || '/') === basePath)) {
+        return cat.id;
+      }
+    }
+    return sidebarCategories[0]?.id || 'getting-started';
+  };
+
+  // Accordion state: ONLY ONE category can be expanded at a time
+  const [openCatId, setOpenCatId] = useState(() => findActiveCatId(currentPath));
+
+  // Sync open category when current path changes
+  useEffect(() => {
+    const activeCat = findActiveCatId(currentPath);
+    setOpenCatId(activeCat);
+  }, [currentPath]);
+
+  // Toggle single accordion category
+  const handleToggleCategory = (catId, mainPath) => {
+    triggerHaptic('medium');
+    if (openCatId === catId) {
+      setOpenCatId(null);
+    } else {
+      setOpenCatId(catId);
+    }
+    if (mainPath) {
+      onSelectRoute(mainPath);
+      if (onCloseMobile) onCloseMobile();
+    }
   };
 
   const content = (
-    <div className="flex flex-col h-full py-4 px-3 select-none">
-      {/* Category Accordion Navigation List */}
-      <div className="flex-1 overflow-y-auto space-y-4 pr-1 text-sm">
+    <div className="flex flex-col h-full py-5 px-3 select-none">
+      {/* Category List */}
+      <div className="flex-1 overflow-y-auto space-y-2 pr-1">
         {sidebarCategories.map((cat) => {
-          const isOpen = openCategories[cat.id] !== false;
-          const catMainPath = getCategoryMainPath(cat).split('#')[0];
-          const isCategoryActive = currentPath === catMainPath;
+          const isOpen = openCatId === cat.id;
+          const mainItem = cat.items.find(item => item.isMain) || cat.items[0];
+          const catMainPath = mainItem ? mainItem.path : '/';
+          const catBasePath = catMainPath.split('#')[0] || '/';
+          const isCategoryActive = (currentPath.split('#')[0] || '/') === catBasePath;
 
           return (
             <div key={cat.id} className="space-y-1">
-              {/* Category Header Label */}
+              {/* 1차 메뉴 (1st Level Category Item): 크기를 크고 명확하게 */}
               <button
-                onClick={() => toggleCategory(cat.id)}
-                className="w-full flex items-center justify-between px-3 py-1.5 text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
+                onClick={() => handleToggleCategory(cat.id, catMainPath)}
+                className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-2xl transition-all duration-200 text-left cursor-pointer ${
+                  isCategoryActive
+                    ? 'bg-[#e6f7ff] dark:bg-sky-950/80 text-[#087ea4] dark:text-sky-300 font-extrabold shadow-2xs'
+                    : 'text-slate-900 dark:text-slate-100 font-bold hover:bg-slate-100/80 dark:hover:bg-white/5'
+                }`}
               >
-                <span>{cat.title}</span>
-                {isOpen ? (
-                  <ChevronDown className="w-3.5 h-3.5 text-slate-400" />
-                ) : (
-                  <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-                )}
+                <span className="text-base sm:text-[16px] tracking-tight truncate">
+                  {stripNumbers(cat.title)}
+                </span>
+                
+                <span className="p-0.5 shrink-0 text-slate-400">
+                  {isOpen ? (
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isCategoryActive ? 'text-[#087ea4] dark:text-sky-300' : ''}`} />
+                  ) : (
+                    <ChevronRight className="w-4 h-4" />
+                  )}
+                </span>
               </button>
 
-              {/* Nested Items under Category */}
-              {isOpen && (
-                <div className="space-y-0.5">
-                  {cat.items.map((item) => {
-                    const basePath = item.path.split('#')[0] || '/';
-                    const isItemActive = currentPath === basePath && item.isMain;
-                    const isAnchorActive = currentPath === basePath;
+              {/* 2차 메뉴 (2nd Level Sub-items): 펼쳐짐 아코디언 애니메이션 (CSS Grid 1fr -> 0fr) */}
+              <div 
+                className={`grid transition-all duration-300 ease-in-out ${
+                  isOpen 
+                    ? 'grid-rows-[1fr] opacity-100 my-1' 
+                    : 'grid-rows-[0fr] opacity-0 my-0 pointer-events-none'
+                }`}
+              >
+                <div className="overflow-hidden">
+                  <div className="space-y-1 ml-3 pl-3 border-l border-slate-200/80 dark:border-slate-800">
+                    {cat.items.map((item) => {
+                      const itemBasePath = item.path.split('#')[0] || '/';
+                      const isItemActive = currentPath === item.path || (currentPath === itemBasePath && item.isMain);
 
-                    return (
-                      <button
-                        key={item.id}
-                        onClick={() => {
-                          triggerHaptic('light');
-                          onSelectRoute(item.path);
-                          if (onCloseMobile) onCloseMobile();
-                        }}
-                        className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-sm font-semibold transition-all duration-150 text-left cursor-pointer ${
-                          isItemActive
-                            ? 'bg-[#e6f7ff] dark:bg-sky-950/70 text-[#087ea4] dark:text-sky-300 font-bold'
-                            : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100/80 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-white'
-                        }`}
-                      >
-                        <span className="truncate">{item.title}</span>
-                        {item.badge && (
-                          <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full shrink-0 ${
-                            isItemActive 
-                              ? 'bg-[#087ea4]/15 text-[#087ea4] dark:text-sky-300' 
-                              : 'bg-slate-200/70 dark:bg-slate-800 text-slate-500 dark:text-slate-400'
-                          }`}>
-                            {item.badge}
+                      return (
+                        <button
+                          key={item.id}
+                          onClick={() => {
+                            triggerHaptic('light');
+                            onSelectRoute(item.path);
+                            if (onCloseMobile) onCloseMobile();
+                          }}
+                          className={`w-full flex items-center justify-between px-3 py-1.5 rounded-lg text-xs sm:text-[13px] transition-all duration-150 text-left cursor-pointer ${
+                            isItemActive
+                              ? 'text-[#087ea4] dark:text-sky-300 font-bold bg-[#087ea4]/10 dark:bg-sky-500/15'
+                              : 'text-slate-600 dark:text-slate-400 font-normal hover:text-slate-900 dark:hover:text-white hover:bg-slate-100/60 dark:hover:bg-white/5'
+                          }`}
+                        >
+                          <span className="truncate leading-tight">
+                            {stripNumbers(item.title)}
                           </span>
-                        )}
-                      </button>
-                    );
-                  })}
+                          {item.badge && (
+                            <span className={`text-[10px] font-bold px-1.5 py-0.2 rounded-full shrink-0 ${
+                              isItemActive 
+                                ? 'bg-[#087ea4]/20 text-[#087ea4] dark:text-sky-300' 
+                                : 'bg-slate-200/60 dark:bg-slate-800 text-slate-500 dark:text-slate-400'
+                            }`}>
+                              {item.badge}
+                            </span>
+                          )}
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
-              )}
+              </div>
             </div>
           );
         })}
