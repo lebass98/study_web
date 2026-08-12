@@ -6,7 +6,7 @@
 
 @layer base {
   /* ==========================================================================
-     Pretendard Typography & Minimum 16px Font Size Rule
+     Pretendard Typography & Strict Minimum 16px Font Size Rule
      ========================================================================== */
   :root {
     font-size: 16px; /* Base 1rem = 16px */
@@ -21,61 +21,79 @@
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
     font-size: 1rem; /* 16px minimum */
     letter-spacing: -0.01em;
-    line-height: 1.85;
-    color: #1d1d1f;
+    line-height: 1.8;
+    background-color: #ffffff;
+    color: #111827;
   }
 
   .dark body {
-    color: #f5f5f7;
+    background-color: #121316;
+    color: #f9fafb;
   }
 
-  /* React Official Doc Headings */
+  /* Headings Hierarchy */
   h1 {
-    font-size: clamp(2rem, 4vw, 2.75rem);
-    line-height: 1.2;
+    font-size: clamp(2.25rem, 4vw, 3rem);
+    line-height: 1.25;
     letter-spacing: -0.025em;
     font-weight: 800;
     margin-top: 0.5rem;
     margin-bottom: 1.25rem;
+    color: #0f172a;
+  }
+
+  .dark h1 {
+    color: #ffffff;
   }
 
   h2 {
-    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
     line-height: 1.3;
     letter-spacing: -0.02em;
     font-weight: 700;
     margin-top: 2.25rem;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
+    color: #0f172a;
+  }
+
+  .dark h2 {
+    color: #f8fafc;
   }
 
   h3 {
-    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    font-size: clamp(1.35rem, 2vw, 1.65rem);
     line-height: 1.35;
     letter-spacing: -0.015em;
     font-weight: 700;
     margin-top: 1.75rem;
     margin-bottom: 0.75rem;
+    color: #1e293b;
+  }
+
+  .dark h3 {
+    color: #f1f5f9;
   }
 
   h4 {
-    font-size: 1.05rem;
+    font-size: 1.15rem; /* 18.4px */
     line-height: 1.45;
     letter-spacing: -0.012em;
     font-weight: 600;
     margin-top: 1.25rem;
     margin-bottom: 0.5rem;
+    color: #1e293b;
   }
 
   p {
-    font-size: 1rem; /* 16px */
+    font-size: 1rem; /* 16px minimum */
     margin-bottom: 1.25rem;
-    line-height: 1.75;
-    color: #23272f;
+    line-height: 1.8;
+    color: #1e293b;
   }
 
   .dark p {
-    color: #f6f7f9;
+    color: #f3f4f6;
   }
 
   ul, ol {
@@ -84,9 +102,9 @@
   }
 
   li {
-    font-size: 0.95rem; /* ~15.2px */
+    font-size: 1rem; /* 16px minimum */
     margin-bottom: 0.5rem;
-    line-height: 1.7;
+    line-height: 1.75;
   }
 
   code, pre {
@@ -94,25 +112,40 @@
     letter-spacing: 0;
   }
 
-  /* React Official Doc Code Block Style */
+  /* Code Block Style - Clean Bright Tone */
   pre {
-    background-color: #f8f9fa !important;
-    color: #23272f !important;
-    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    background-color: #fafafa !important;
+    color: #0f172a !important;
+    border: 1px solid #e2e8f0 !important;
     border-radius: 1rem !important; /* rounded-2xl */
     padding: 1.25rem 1.5rem !important;
     margin-top: 1.25rem !important;
     margin-bottom: 1.25rem !important;
     overflow-x: auto !important;
-    font-size: 0.9rem !important;
-    line-height: 1.65 !important;
+    font-size: 1rem !important; /* 16px minimum */
+    line-height: 1.7 !important;
   }
 
   .dark pre {
-    background-color: #16181d !important;
-    color: #f6f7f9 !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    background-color: #181a20 !important;
+    color: #f8fafc !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
   }
+}
+
+/* ==========================================================================
+   STRICT RULE: Absolute minimum font size 16px (1rem) for ALL text classes
+   ========================================================================== */
+.text-xs,
+.text-sm,
+.text-\[10px\],
+.text-\[11px\],
+.text-\[12px\],
+.text-\[13px\],
+.text-\[14px\],
+.text-\[15px\] {
+  font-size: 1rem !important; /* 16px minimum guarantee */
+  line-height: 1.65 !important;
 }
 
 /* Smooth Scrolling for Anchor Links */
@@ -121,7 +154,7 @@ html {
   scroll-padding-top: 5rem;
 }
 
-/* Apple-style Custom Scrollbar */
+/* Custom Scrollbar - Clean White Tone */
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
@@ -132,7 +165,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(140, 140, 145, 0.35);
+  background: rgba(180, 185, 195, 0.5);
   border-radius: 9999px;
 }
 
@@ -141,150 +174,68 @@ html {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(100, 100, 105, 0.6);
+  background: rgba(140, 145, 155, 0.8);
 }
 
 /* ==========================================================================
-   Apple Design Materials & Depth (Translucency & Edge Masks)
+   Pure Clean White Design System
    ========================================================================== */
 
-/* Glass Material Toolbar Chrome */
+/* Glass Material Toolbar Chrome - Pure White */
 .apple-glass {
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .dark .apple-glass {
-  background: rgba(28, 29, 34, 0.82);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  background: #181a20;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Translucent Card Surfaces */
+/* Pure Clean White Card Surfaces */
 .apple-glass-card {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(14px) saturate(160%);
-  -webkit-backdrop-filter: blur(14px) saturate(160%);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .dark .apple-glass-card {
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(14px) saturate(160%);
-  -webkit-backdrop-filter: blur(14px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: #1e222b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-/* Scroll Edge Mask */
-.apple-scroll-mask {
-  mask-image: linear-gradient(to bottom, transparent 0%, black 16px, black calc(100% - 16px), transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 16px, black calc(100% - 16px), transparent 100%);
-}
-
-/* ==========================================================================
-   Apple Design Response & Touch Scale
-   ========================================================================== */
+/* Button & Response Effects */
 .apple-btn {
   transition: transform 100ms cubic-bezier(0.16, 1, 0.3, 1), 
               background-color 150ms ease, 
-              box-shadow 150ms ease,
-              opacity 150ms ease;
-  will-change: transform;
+              box-shadow 150ms ease;
 }
 
 .apple-btn:active {
-  transform: scale(0.97);
+  transform: scale(0.98);
 }
 
-/* Apple Card Physics Hover Settle */
 .apple-card-hover {
-  transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1), 
-              box-shadow 260ms cubic-bezier(0.16, 1, 0.3, 1), 
-              border-color 200ms ease;
-  will-change: transform, box-shadow;
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
 }
 
 .apple-card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 34px -8px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.08);
 }
 
-.dark .apple-card-hover:hover {
-  box-shadow: 0 14px 34px -8px rgba(0, 0, 0, 0.45);
-  border-color: rgba(6, 182, 212, 0.4);
-}
-
-/* ==========================================================================
-   Apple Design Frame Smoothness & Entrances
-   ========================================================================== */
 @keyframes applePageFadeIn {
   from {
     opacity: 0;
-    transform: translateY(12px) scale(0.995);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
 }
 
 .animate-page-entry {
-  animation: applePageFadeIn 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* Gentle floating physics */
-@keyframes appleFloat {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-3.5px);
-  }
-}
-
-.animate-float {
-  animation: appleFloat 3.8s ease-in-out infinite;
-}
-
-/* ==========================================================================
-   Apple Design Reduced Motion & Accessibility Standards
-   ========================================================================== */
-@media (prefers-reduced-motion: reduce) {
-  *, ::before, ::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-  .animate-page-entry {
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
-  .apple-card-hover:hover {
-    transform: none !important;
-  }
-}
-
-@media (prefers-reduced-transparency: reduce) {
-  .apple-glass, .apple-glass-card {
-    background: #ffffff !important;
-    backdrop-filter: none !important;
-  }
-  .dark .apple-glass, .dark .apple-glass-card {
-    background: #1c1d22 !important;
-    backdrop-filter: none !important;
-  }
-}
-
-@media (prefers-contrast: more) {
-  .apple-glass-card, .apple-glass {
-    border: 1.5px solid #000000 !important;
-  }
-  .dark .apple-glass-card, .dark .apple-glass {
-    border: 1.5px solid #ffffff !important;
-  }
+  animation: applePageFadeIn 0.25s ease-out forwards;
 }

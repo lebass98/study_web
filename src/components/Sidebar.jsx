@@ -9,7 +9,7 @@ export default function Sidebar({
   isMobileOpen, 
   onCloseMobile 
 }) {
-  // Helper to remove any remaining numbers from title string (failsafe)
+  // Failsafe helper to strip any leading numbers from titles
   const stripNumbers = (text) => {
     if (!text) return '';
     return text.replace(/^[0-9]+\.\s*/, '');
@@ -50,7 +50,7 @@ export default function Sidebar({
   };
 
   const content = (
-    <div className="flex flex-col h-full py-5 px-3 select-none">
+    <div className="flex flex-col h-full py-5 px-3 select-none bg-white dark:bg-[#121316]">
       {/* Category List */}
       <div className="flex-1 overflow-y-auto space-y-2 pr-1">
         {sidebarCategories.map((cat) => {
@@ -62,29 +62,29 @@ export default function Sidebar({
 
           return (
             <div key={cat.id} className="space-y-1">
-              {/* 1차 메뉴 (1st Level Category Item): 크기를 크고 명확하게 */}
+              {/* 1차 메뉴 (1st Level Category Item): 크기를 크고 시원하게 (18px ~ 20px) */}
               <button
                 onClick={() => handleToggleCategory(cat.id, catMainPath)}
-                className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-2xl transition-all duration-200 text-left cursor-pointer ${
+                className={`w-full flex items-center justify-between px-4 py-3 rounded-2xl transition-all duration-200 text-left cursor-pointer ${
                   isCategoryActive
-                    ? 'bg-[#e6f7ff] dark:bg-sky-950/80 text-[#087ea4] dark:text-sky-300 font-extrabold shadow-2xs'
-                    : 'text-slate-900 dark:text-slate-100 font-bold hover:bg-slate-100/80 dark:hover:bg-white/5'
+                    ? 'bg-sky-50 dark:bg-sky-950/80 text-[#087ea4] dark:text-sky-300 font-extrabold border border-sky-100/80 dark:border-sky-900/50'
+                    : 'text-slate-900 dark:text-white font-extrabold hover:bg-slate-100/70 dark:hover:bg-white/5'
                 }`}
               >
-                <span className="text-base sm:text-[16px] tracking-tight truncate">
+                <span className="text-lg sm:text-xl tracking-tight truncate">
                   {stripNumbers(cat.title)}
                 </span>
                 
                 <span className="p-0.5 shrink-0 text-slate-400">
                   {isOpen ? (
-                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isCategoryActive ? 'text-[#087ea4] dark:text-sky-300' : ''}`} />
+                    <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${isCategoryActive ? 'text-[#087ea4] dark:text-sky-300' : ''}`} />
                   ) : (
-                    <ChevronRight className="w-4 h-4" />
+                    <ChevronRight className="w-5 h-5" />
                   )}
                 </span>
               </button>
 
-              {/* 2차 메뉴 (2nd Level Sub-items): 펼쳐짐 아코디언 애니메이션 (CSS Grid 1fr -> 0fr) */}
+              {/* 2차 메뉴 (2nd Level Sub-items): 안쪽 들여쓰기, 1차보다 작은 16px (최소 16px 보장) */}
               <div 
                 className={`grid transition-all duration-300 ease-in-out ${
                   isOpen 
@@ -93,7 +93,7 @@ export default function Sidebar({
                 }`}
               >
                 <div className="overflow-hidden">
-                  <div className="space-y-1 ml-3 pl-3 border-l border-slate-200/80 dark:border-slate-800">
+                  <div className="space-y-1 ml-4 pl-3.5 border-l-2 border-slate-200/80 dark:border-slate-800">
                     {cat.items.map((item) => {
                       const itemBasePath = item.path.split('#')[0] || '/';
                       const isItemActive = currentPath === item.path || (currentPath === itemBasePath && item.isMain);
@@ -106,20 +106,20 @@ export default function Sidebar({
                             onSelectRoute(item.path);
                             if (onCloseMobile) onCloseMobile();
                           }}
-                          className={`w-full flex items-center justify-between px-3 py-1.5 rounded-lg text-xs sm:text-[13px] transition-all duration-150 text-left cursor-pointer ${
+                          className={`w-full flex items-center justify-between px-3.5 py-2 rounded-xl text-base transition-all duration-150 text-left cursor-pointer ${
                             isItemActive
-                              ? 'text-[#087ea4] dark:text-sky-300 font-bold bg-[#087ea4]/10 dark:bg-sky-500/15'
-                              : 'text-slate-600 dark:text-slate-400 font-normal hover:text-slate-900 dark:hover:text-white hover:bg-slate-100/60 dark:hover:bg-white/5'
+                              ? 'text-[#087ea4] dark:text-sky-300 font-bold bg-sky-50 dark:bg-sky-950/60'
+                              : 'text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white hover:bg-slate-100/60 dark:hover:bg-white/5'
                           }`}
                         >
-                          <span className="truncate leading-tight">
+                          <span className="truncate leading-snug">
                             {stripNumbers(item.title)}
                           </span>
                           {item.badge && (
-                            <span className={`text-[10px] font-bold px-1.5 py-0.2 rounded-full shrink-0 ${
+                            <span className={`text-base font-bold px-2 py-0.5 rounded-full shrink-0 ${
                               isItemActive 
-                                ? 'bg-[#087ea4]/20 text-[#087ea4] dark:text-sky-300' 
-                                : 'bg-slate-200/60 dark:bg-slate-800 text-slate-500 dark:text-slate-400'
+                                ? 'bg-sky-100 text-[#087ea4] dark:bg-sky-900 dark:text-sky-300' 
+                                : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400'
                             }`}>
                               {item.badge}
                             </span>
@@ -140,7 +140,7 @@ export default function Sidebar({
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside className="w-72 shrink-0 hidden md:block sticky top-16 h-[calc(100vh-4rem)] border-r border-slate-200/80 dark:border-white/10 bg-white/80 dark:bg-[#23272f]/80 backdrop-blur-md">
+      <aside className="w-72 shrink-0 hidden md:block sticky top-16 h-[calc(100vh-4rem)] border-r border-slate-200/80 dark:border-slate-800/80 bg-white dark:bg-[#121316]">
         {content}
       </aside>
 
@@ -151,7 +151,7 @@ export default function Sidebar({
             className="fixed inset-0 bg-slate-950/50 backdrop-blur-sm animate-in fade-in duration-200"
             onClick={onCloseMobile}
           />
-          <aside className="fixed top-16 left-0 bottom-0 w-80 bg-white dark:bg-[#23272f] border-r border-slate-200/80 dark:border-white/10 shadow-2xl z-50 animate-in slide-in-from-left duration-300">
+          <aside className="fixed top-16 left-0 bottom-0 w-80 bg-white dark:bg-[#121316] border-r border-slate-200/80 dark:border-slate-800/80 shadow-2xl z-50 animate-in slide-in-from-left duration-300">
             {content}
           </aside>
         </div>

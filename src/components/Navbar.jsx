@@ -22,13 +22,13 @@ export default function Navbar({
   };
 
   return (
-    <header className="sticky top-0 z-30 w-full bg-white/90 dark:bg-[#23272f]/90 backdrop-blur-md border-b border-slate-200/80 dark:border-white/10 transition-colors duration-200">
+    <header className="sticky top-0 z-30 w-full bg-white dark:bg-[#121316] border-b border-slate-200/80 dark:border-slate-800/80 transition-colors duration-200">
       <div className="w-full px-4 sm:px-8 flex items-center justify-between h-16">
         {/* Left: React Logo & Brand */}
         <div className="flex items-center gap-3">
           <button 
             onClick={handleLogoClick}
-            className="flex items-center gap-2 group text-left cursor-pointer apple-btn"
+            className="flex items-center gap-2.5 group text-left cursor-pointer apple-btn"
           >
             {/* React Official Atom Logo Icon */}
             <svg className="w-8 h-8 text-[#087ea4] dark:text-[#149eca] transition-transform duration-300 group-hover:rotate-45" viewBox="-11.5 -10.23174 23 20.46348">
@@ -41,10 +41,10 @@ export default function Navbar({
             </svg>
 
             <div className="flex items-baseline gap-1.5">
-              <span className="font-extrabold text-xl text-slate-900 dark:text-white tracking-tight">
+              <span className="font-extrabold text-xl sm:text-2xl text-slate-900 dark:text-white tracking-tight">
                 React
               </span>
-              <span className="text-xs font-mono font-medium text-slate-500 dark:text-slate-400">
+              <span className="text-base font-mono font-medium text-slate-500 dark:text-slate-400">
                 v19.2
               </span>
             </div>
@@ -58,14 +58,14 @@ export default function Navbar({
               triggerHaptic('light');
               onOpenSearch();
             }}
-            className="w-full flex items-center justify-between px-4 py-2 rounded-full border border-slate-200/80 dark:border-white/10 bg-[#f3f4f6] dark:bg-white/5 text-slate-400 hover:border-[#087ea4]/40 hover:text-slate-700 dark:hover:text-slate-200 text-xs cursor-pointer transition-all"
+            className="w-full flex items-center justify-between px-4 py-2 rounded-full border border-slate-200 dark:border-slate-800 bg-[#f8f9fa] dark:bg-[#1e222b] text-slate-600 dark:text-slate-300 hover:border-[#087ea4]/40 text-base cursor-pointer transition-all"
           >
             <div className="flex items-center gap-2">
               <Search className="w-4 h-4 text-slate-400" />
-              <span>검색...</span>
+              <span className="text-base">검색...</span>
             </div>
             <div className="flex items-center gap-1">
-              <kbd className="px-1.5 py-0.5 text-[10px] font-mono bg-white dark:bg-slate-800 text-slate-400 rounded-md border border-slate-200 dark:border-slate-700">
+              <kbd className="px-2 py-0.5 text-base font-mono bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400 rounded-md border border-slate-200 dark:border-slate-700">
                 ⌘K
               </kbd>
             </div>
@@ -73,9 +73,9 @@ export default function Navbar({
         </div>
 
         {/* Right: Navigation items & Controls */}
-        <div className="flex items-center gap-1 sm:gap-2">
+        <div className="flex items-center gap-1.5 sm:gap-2">
           {/* Main Top Nav Links */}
-          <nav className="hidden md:flex items-center gap-1 text-sm font-semibold">
+          <nav className="hidden md:flex items-center gap-1.5 text-base font-semibold">
             {[
               { title: '학습하기', path: '/' },
               { title: '웹 기획', path: '/learn/planning' },
@@ -90,9 +90,9 @@ export default function Navbar({
                 <button
                   key={nav.path}
                   onClick={() => handleNavClick(nav.path)}
-                  className={`px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-150 cursor-pointer ${
+                  className={`px-3.5 py-1.5 rounded-full text-base font-semibold transition-all duration-150 cursor-pointer ${
                     isActive 
-                      ? 'bg-[#e6f7ff] dark:bg-sky-950/80 text-[#087ea4] dark:text-sky-300 font-bold' 
+                      ? 'bg-sky-50 dark:bg-sky-950/80 text-[#087ea4] dark:text-sky-300 font-bold border border-sky-100 dark:border-sky-900/50' 
                       : 'text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5'
                   }`}
                 >
