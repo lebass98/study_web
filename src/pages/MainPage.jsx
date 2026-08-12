@@ -322,12 +322,12 @@ export default function MainPage({ onSelectRoute }) {
           아래 시뮬레이터에서 <strong>[장바구니 담기]</strong> 버튼을 클릭하고 손님(브라우저) ➔ 웨이터(API) ➔ 주방(서버) ➔ 창고(DB) 순서로 신호가 이동하는 과정을 직접 확인해 보세요!
         </p>
 
-        <div className="not-prose my-6 p-6 rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-[#f8f9fa] dark:bg-[#1c1d22] text-slate-800 dark:text-slate-100 shadow-sm">
+        <div className="not-prose my-6 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#181a20] text-slate-800 dark:text-slate-100 shadow-2xs">
           {/* Top Bar */}
-          <div className="flex items-center justify-between pb-4 mb-6 border-b border-slate-200/80 dark:border-slate-800">
+          <div className="flex items-center justify-between pb-4 mb-6 border-b border-slate-200 dark:border-slate-800">
             <div className="flex items-center gap-2">
-              <ShoppingCart className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
-              <span className="font-bold text-sm sm:text-base text-slate-900 dark:text-slate-100">쇼핑몰 장바구니 주문 체험 시뮬레이터</span>
+              <ShoppingCart className="w-5 h-5 text-[#087ea4] dark:text-sky-400" />
+              <span className="font-bold text-base text-slate-900 dark:text-slate-100">쇼핑몰 장바구니 주문 체험 시뮬레이터</span>
             </div>
             <div className="flex items-center gap-3">
               <span className="text-xs text-slate-500 dark:text-slate-400">담긴 상품:</span>

@@ -113,20 +113,20 @@ export default function SubPagePmAcademy({ onSelectRoute }) {
           <strong>문제를 발견하고 해결 방향을 결정하는 사람(Product Manager)</strong>입니다.
         </p>
 
-        <div className="my-6 p-6 rounded-2xl bg-slate-900 text-slate-100 not-prose shadow-xl border border-slate-800">
-          <h3 className="text-lg font-bold text-cyan-400 mb-3 flex items-center gap-2">
+        <div className="my-6 p-6 rounded-2xl bg-white dark:bg-[#181a20] text-slate-900 dark:text-slate-100 not-prose shadow-2xs border border-slate-200 dark:border-slate-800">
+          <h3 className="text-base font-bold text-[#087ea4] dark:text-sky-400 mb-3 flex items-center gap-2">
             <Zap className="w-5 h-5" /> PM의 핵심 5단계 무한 반복 프로세스
           </h3>
-          <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-center text-xs font-semibold">
-            <div className="p-3 bg-slate-800 rounded-xl w-full">1. 문제 발견</div>
-            <ArrowRight className="w-4 h-4 text-slate-500 hidden md:block shrink-0" />
-            <div className="p-3 bg-slate-800 rounded-xl w-full">2. 가설 수립</div>
-            <ArrowRight className="w-4 h-4 text-slate-500 hidden md:block shrink-0" />
-            <div className="p-3 bg-slate-800 rounded-xl w-full">3. 데이터 확인</div>
-            <ArrowRight className="w-4 h-4 text-slate-500 hidden md:block shrink-0" />
-            <div className="p-3 bg-slate-800 rounded-xl w-full">4. 해결책 설계</div>
-            <ArrowRight className="w-4 h-4 text-slate-500 hidden md:block shrink-0" />
-            <div className="p-3 bg-slate-800 rounded-xl w-full">5. 실행 & 결과 검증</div>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-center text-base font-semibold">
+            <div className="p-3 bg-sky-50 dark:bg-sky-950/60 text-[#087ea4] dark:text-sky-300 border border-sky-100/80 rounded-xl w-full">1. 문제 발견</div>
+            <ArrowRight className="w-4 h-4 text-slate-400 hidden md:block shrink-0" />
+            <div className="p-3 bg-sky-50 dark:bg-sky-950/60 text-[#087ea4] dark:text-sky-300 border border-sky-100/80 rounded-xl w-full">2. 가설 수립</div>
+            <ArrowRight className="w-4 h-4 text-slate-400 hidden md:block shrink-0" />
+            <div className="p-3 bg-sky-50 dark:bg-sky-950/60 text-[#087ea4] dark:text-sky-300 border border-sky-100/80 rounded-xl w-full">3. 데이터 확인</div>
+            <ArrowRight className="w-4 h-4 text-slate-400 hidden md:block shrink-0" />
+            <div className="p-3 bg-sky-50 dark:bg-sky-950/60 text-[#087ea4] dark:text-sky-300 border border-sky-100/80 rounded-xl w-full">4. 해결책 설계</div>
+            <ArrowRight className="w-4 h-4 text-slate-400 hidden md:block shrink-0" />
+            <div className="p-3 bg-sky-50 dark:bg-sky-950/60 text-[#087ea4] dark:text-sky-300 border border-sky-100/80 rounded-xl w-full">5. 실행 & 결과 검증</div>
           </div>
         </div>
 
@@ -414,12 +414,12 @@ export default function SubPagePmAcademy({ onSelectRoute }) {
             </div>
           </div>
 
-          <div className="p-4 rounded-2xl bg-slate-900 text-white flex items-center justify-between">
-            <div className="text-sm font-semibold">
+          <div className="p-4 rounded-2xl bg-white dark:bg-[#181a20] border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white flex items-center justify-between shadow-2xs">
+            <div className="text-base font-semibold">
               계산된 RICE 우선순위 점수:
             </div>
-            <div className="text-3xl font-extrabold font-mono text-cyan-400">
-              {riceScore.toLocaleString()} <span className="text-xs text-slate-400">pts</span>
+            <div className="text-3xl font-extrabold font-mono text-[#087ea4] dark:text-sky-400">
+              {riceScore.toLocaleString()} <span className="text-base text-slate-500">pts</span>
             </div>
           </div>
         </div>
@@ -437,23 +437,23 @@ export default function SubPagePmAcademy({ onSelectRoute }) {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-6">
-          <div className="p-5 rounded-2xl bg-emerald-500/10 border border-emerald-500/30">
-            <div className="font-bold text-emerald-600 dark:text-emerald-400 mb-1">1순위: 로그인 오류 수정</div>
-            <p className="text-xs text-slate-600 dark:text-slate-300">
+          <div className="p-5 rounded-2xl bg-white dark:bg-[#1e222b] border border-emerald-500/40 shadow-2xs">
+            <div className="font-bold text-emerald-600 dark:text-emerald-400 mb-1 text-base">1순위: 로그인 오류 수정</div>
+            <p className="text-base text-slate-600 dark:text-slate-300">
               배달 앱에서 로그인이 안 되면 주문 자체가 불가능합니다. 일 300건 VOC와 치명적 이탈률 발생으로 최우선 처리.
             </p>
           </div>
 
-          <div className="p-5 rounded-2xl bg-cyan-500/10 border border-cyan-500/30">
-            <div className="font-bold text-cyan-600 dark:text-cyan-400 mb-1">2순위: 쿠폰 자동 적용 / 지도 로딩 개선</div>
-            <p className="text-xs text-slate-600 dark:text-slate-300">
+          <div className="p-5 rounded-2xl bg-white dark:bg-[#1e222b] border border-sky-500/40 shadow-2xs">
+            <div className="font-bold text-[#087ea4] dark:text-sky-400 mb-1 text-base">2순위: 쿠폰 자동 적용 / 지도 로딩 개선</div>
+            <p className="text-base text-slate-600 dark:text-slate-300">
               쿠폰 적용 실패로 인한 결제 포기율 데이터 검증 후 결제 전환율 개선에 직접적 기여.
             </p>
           </div>
 
-          <div className="p-5 rounded-2xl bg-slate-200/50 dark:bg-slate-800/50 opacity-70">
-            <div className="font-bold text-slate-500 mb-1">우선순위 보류: 다크 모드</div>
-            <p className="text-xs text-slate-500">
+          <div className="p-5 rounded-2xl bg-white dark:bg-[#1e222b] border border-slate-200 dark:border-slate-800 opacity-70">
+            <div className="font-bold text-slate-500 mb-1 text-base">우선순위 보류: 다크 모드</div>
+            <p className="text-base text-slate-500">
               배달 주문은 빠른 완료가 목적이므로, 긴 체류시간이 필요 없어 야간 사용자 비중 데이터 없이는 후순위 배치.
             </p>
           </div>
@@ -475,12 +475,12 @@ export default function SubPagePmAcademy({ onSelectRoute }) {
         <div className="relative my-4 not-prose">
           <button 
             onClick={() => handleCopy(prdTemplateText, 1)}
-            className="absolute top-3 right-3 px-3 py-1.5 rounded-xl bg-cyan-600 text-white text-xs font-bold flex items-center gap-1.5 shadow-md hover:bg-cyan-500 transition-colors cursor-pointer"
+            className="absolute top-3 right-3 px-3 py-1.5 rounded-xl bg-[#087ea4] text-white text-base font-bold flex items-center gap-1.5 shadow-md hover:bg-sky-600 transition-colors cursor-pointer"
           >
             {copiedIndex === 1 ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
             <span>{copiedIndex === 1 ? '복사 완료!' : '템플릿 복사'}</span>
           </button>
-          <pre className="p-5 rounded-2xl bg-slate-900 text-slate-200 text-xs font-mono whitespace-pre-wrap overflow-x-auto leading-relaxed border border-slate-800">
+          <pre className="p-5 rounded-2xl bg-white dark:bg-[#181a20] text-slate-900 dark:text-slate-100 text-base font-mono whitespace-pre-wrap overflow-x-auto leading-relaxed border border-slate-200 dark:border-slate-800">
 {prdTemplateText}
           </pre>
         </div>

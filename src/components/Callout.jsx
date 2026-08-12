@@ -4,7 +4,7 @@ import { Info, Lightbulb, AlertTriangle, AlertCircle } from 'lucide-react';
 export default function Callout({ type = 'note', title, children }) {
   const configs = {
     note: {
-      accentColor: 'text-sky-600 dark:text-sky-400',
+      accentColor: 'text-[#087ea4] dark:text-sky-400',
       Icon: Info,
       defaultTitle: '학습 내용 / 참고 사항',
     },
@@ -29,14 +29,14 @@ export default function Callout({ type = 'note', title, children }) {
   const { accentColor, Icon, defaultTitle } = config;
 
   return (
-    <div className="my-8 sm:my-10 p-6 sm:p-8 rounded-3xl bg-[#f8f9fa] dark:bg-[#1c1d22] border border-slate-200/80 dark:border-slate-800/80 transition-all duration-200 not-prose">
+    <div className="my-8 sm:my-10 p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#1e222b] border border-slate-200 dark:border-slate-800 shadow-2xs transition-all duration-200 not-prose">
       <div className="flex items-center gap-3 mb-4">
-        <Icon className={`w-5 h-5 ${accentColor} shrink-0`} />
-        <h3 className="font-bold text-xl sm:text-2xl tracking-tight text-slate-900 dark:text-slate-100">
+        <Icon className={`w-6 h-6 ${accentColor} shrink-0`} />
+        <h3 className="font-bold text-xl sm:text-2xl tracking-tight text-slate-900 dark:text-white">
           {title || defaultTitle}
         </h3>
       </div>
-      <div className="text-base sm:text-lg leading-relaxed text-slate-700 dark:text-slate-300 space-y-3">
+      <div className="text-base sm:text-lg leading-relaxed text-slate-800 dark:text-slate-200 space-y-3">
         {children}
       </div>
     </div>
