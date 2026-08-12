@@ -29,58 +29,64 @@
     color: #f5f5f7;
   }
 
-  /* Spacious Headings */
+  /* React Official Doc Headings */
   h1 {
-    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-size: clamp(2rem, 4vw, 2.75rem);
     line-height: 1.2;
-    letter-spacing: -0.028em;
+    letter-spacing: -0.025em;
     font-weight: 800;
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
-  }
-
-  h2 {
-    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-    line-height: 1.3;
-    letter-spacing: -0.022em;
-    font-weight: 700;
-    margin-top: 2.25rem;
+    margin-top: 0.5rem;
     margin-bottom: 1.25rem;
   }
 
+  h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    margin-top: 2.25rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
   h3 {
-    font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
     line-height: 1.35;
-    letter-spacing: -0.018em;
+    letter-spacing: -0.015em;
     font-weight: 700;
     margin-top: 1.75rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
   }
 
   h4 {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     line-height: 1.45;
     letter-spacing: -0.012em;
     font-weight: 600;
     margin-top: 1.25rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
   }
 
   p {
-    font-size: 1.05rem; /* ~16.8px */
-    margin-bottom: 1.35rem;
-    line-height: 1.85;
+    font-size: 1rem; /* 16px */
+    margin-bottom: 1.25rem;
+    line-height: 1.75;
+    color: #23272f;
+  }
+
+  .dark p {
+    color: #f6f7f9;
   }
 
   ul, ol {
-    margin-top: 0.75rem;
-    margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.25rem;
   }
 
   li {
-    font-size: 1rem; /* 16px */
-    margin-bottom: 0.6rem;
-    line-height: 1.8;
+    font-size: 0.95rem; /* ~15.2px */
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
   }
 
   code, pre {
@@ -88,41 +94,25 @@
     letter-spacing: 0;
   }
 
-  /* React Official Doc Code Block Style (Light off-white background, rounded-3xl, soft border) */
+  /* React Official Doc Code Block Style */
   pre {
     background-color: #f8f9fa !important;
-    color: #2d3748 !important;
+    color: #23272f !important;
     border: 1px solid rgba(0, 0, 0, 0.08) !important;
-    border-radius: 1.5rem !important; /* rounded-3xl */
-    padding: 1.75rem 2rem !important;
-    margin-top: 1.75rem !important;
-    margin-bottom: 1.75rem !important;
+    border-radius: 1rem !important; /* rounded-2xl */
+    padding: 1.25rem 1.5rem !important;
+    margin-top: 1.25rem !important;
+    margin-bottom: 1.25rem !important;
     overflow-x: auto !important;
-    font-size: 1rem !important;
-    line-height: 1.8 !important;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+    font-size: 0.9rem !important;
+    line-height: 1.65 !important;
   }
 
   .dark pre {
-    background-color: #1c1d22 !important;
-    color: #f1f5f9 !important;
+    background-color: #16181d !important;
+    color: #f6f7f9 !important;
     border: 1px solid rgba(255, 255, 255, 0.08) !important;
   }
-}
-
-/* ==========================================================================
-   Strict Requirement: No font smaller than 16px inside main content area
-   ========================================================================== */
-main {
-  font-size: 1rem;
-}
-
-main .text-xs,
-main .text-sm,
-main .text-\[10px\],
-main .text-\[11px\] {
-  font-size: 1rem !important; /* Force minimum 16px font size */
-  line-height: 1.75 !important;
 }
 
 /* Smooth Scrolling for Anchor Links */

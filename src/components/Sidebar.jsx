@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { sidebarCategories } from '../data/navigationData';
+import { ChevronRight, ChevronDown } from 'lucide-react';
 import { triggerHaptic } from '../utils/appleHaptics';
 
 export default function Sidebar({ 
@@ -8,56 +9,91 @@ export default function Sidebar({
   isMobileOpen, 
   onCloseMobile 
 }) {
-  // Format category titles to extract category step numbers
-  const formatCategoryHeader = (rawTitle, index) => {
-    const stepNum = String(index).padStart(2, '0');
-    const cleanTitle = rawTitle.replace(/^[0-9]+\.\s*/, '');
-    return { stepNum, cleanTitle };
+  // Track open state for collapsible categories
+  const [openCategories, setOpenCategories] = useState(() => {
+    // Default open all or open current active category
+    const initial = {};
+    sidebarCategories.forEach(cat => {
+      initial[cat.id] = true;
+    });
+    return initial;
+  });
+
+  const toggleCategory = (catId) => {
+    triggerHaptic('light');
+    setOpenCategories(prev => ({
+      ...prev,
+      [catId]: !prev[catId]
+    }));
   };
 
-  // Get main navigation route path for each category
   const getCategoryMainPath = (cat) => {
     const mainItem = cat.items.find(item => item.isMain) || cat.items[0];
-    if (!mainItem) return '/';
-    // Return base page route path without hash anchor
-    return mainItem.path.split('#')[0] || '/';
+    return mainItem ? mainItem.path : '/';
   };
 
   const content = (
-    <div className="flex flex-col h-full py-4 px-3">
-      {/* Main Categories Only List (Clean Minimalist Direct Navigation) */}
-      <div className="flex-1 overflow-y-auto space-y-2.5 text-sm sm:text-base">
-        {sidebarCategories.map((cat, catIdx) => {
-          const targetPath = getCategoryMainPath(cat);
-          const isCatActive = currentPath === targetPath;
-          const { stepNum, cleanTitle } = formatCategoryHeader(cat.title, catIdx);
+    <div className="flex flex-col h-full py-4 px-3 select-none">
+      {/* Category Accordion Navigation List */}
+      <div className="flex-1 overflow-y-auto space-y-4 pr-1 text-sm">
+        {sidebarCategories.map((cat) => {
+          const isOpen = openCategories[cat.id] !== false;
+          const catMainPath = getCategoryMainPath(cat).split('#')[0];
+          const isCategoryActive = currentPath === catMainPath;
 
           return (
-            <button
-              key={cat.id}
-              onClick={() => {
-                triggerHaptic('medium');
-                onSelectRoute(targetPath);
-                if (onCloseMobile) onCloseMobile();
-              }}
-              className={`w-full flex items-center justify-between py-3 px-3.5 rounded-2xl font-bold text-sm sm:text-base transition-all duration-200 text-left cursor-pointer apple-btn ${
-                isCatActive
-                  ? 'bg-[#e0f2fe] dark:bg-sky-950/80 text-sky-800 dark:text-sky-200 shadow-2xs'
-                  : 'text-slate-900 dark:text-slate-100 hover:bg-slate-100/80 dark:hover:bg-white/5'
-              }`}
-            >
-              <div className="flex items-center gap-3">
-                {/* Category Step Badge (00, 01, 02, 03, 04, 05) */}
-                <span className={`px-2.5 py-0.5 rounded-lg text-xs font-mono font-extrabold tracking-wider shrink-0 ${
-                  isCatActive
-                    ? 'bg-sky-600 text-white shadow-2xs'
-                    : 'bg-slate-200/80 dark:bg-slate-800 text-slate-600 dark:text-slate-300'
-                }`}>
-                  {stepNum}
-                </span>
-                <span className="font-extrabold tracking-tight truncate">{cleanTitle}</span>
-              </div>
-            </button>
+            <div key={cat.id} className="space-y-1">
+              {/* Category Header Label */}
+              <button
+                onClick={() => toggleCategory(cat.id)}
+                className="w-full flex items-center justify-between px-3 py-1.5 text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
+              >
+                <span>{cat.title}</span>
+                {isOpen ? (
+                  <ChevronDown className="w-3.5 h-3.5 text-slate-400" />
+                ) : (
+                  <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
+                )}
+              </button>
+
+              {/* Nested Items under Category */}
+              {isOpen && (
+                <div className="space-y-0.5">
+                  {cat.items.map((item) => {
+                    const basePath = item.path.split('#')[0] || '/';
+                    const isItemActive = currentPath === basePath && item.isMain;
+                    const isAnchorActive = currentPath === basePath;
+
+                    return (
+                      <button
+                        key={item.id}
+                        onClick={() => {
+                          triggerHaptic('light');
+                          onSelectRoute(item.path);
+                          if (onCloseMobile) onCloseMobile();
+                        }}
+                        className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-sm font-semibold transition-all duration-150 text-left cursor-pointer ${
+                          isItemActive
+                            ? 'bg-[#e6f7ff] dark:bg-sky-950/70 text-[#087ea4] dark:text-sky-300 font-bold'
+                            : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100/80 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-white'
+                        }`}
+                      >
+                        <span className="truncate">{item.title}</span>
+                        {item.badge && (
+                          <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full shrink-0 ${
+                            isItemActive 
+                              ? 'bg-[#087ea4]/15 text-[#087ea4] dark:text-sky-300' 
+                              : 'bg-slate-200/70 dark:bg-slate-800 text-slate-500 dark:text-slate-400'
+                          }`}>
+                            {item.badge}
+                          </span>
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
           );
         })}
       </div>
@@ -67,7 +103,7 @@ export default function Sidebar({
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside className="w-72 shrink-0 hidden md:block sticky top-16 h-[calc(100vh-4rem)] border-r border-slate-200/80 dark:border-white/10 apple-glass">
+      <aside className="w-72 shrink-0 hidden md:block sticky top-16 h-[calc(100vh-4rem)] border-r border-slate-200/80 dark:border-white/10 bg-white/80 dark:bg-[#23272f]/80 backdrop-blur-md">
         {content}
       </aside>
 
@@ -75,10 +111,10 @@ export default function Sidebar({
       {isMobileOpen && (
         <div className="fixed inset-0 z-40 md:hidden">
           <div 
-            className="fixed inset-0 bg-slate-950/60 backdrop-blur-sm animate-in fade-in duration-200"
+            className="fixed inset-0 bg-slate-950/50 backdrop-blur-sm animate-in fade-in duration-200"
             onClick={onCloseMobile}
           />
-          <aside className="fixed top-16 left-0 bottom-0 w-80 apple-glass border-r border-slate-200/80 dark:border-white/10 shadow-2xl z-50 animate-in slide-in-from-left duration-300">
+          <aside className="fixed top-16 left-0 bottom-0 w-80 bg-white dark:bg-[#23272f] border-r border-slate-200/80 dark:border-white/10 shadow-2xl z-50 animate-in slide-in-from-left duration-300">
             {content}
           </aside>
         </div>
