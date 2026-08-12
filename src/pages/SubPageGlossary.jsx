@@ -50,6 +50,119 @@ export default function SubPageGlossary({ onSelectRoute }) {
       def: '고객사(발주처)가 외주 개발사에게 "이러한 웹사이트를 만들어주세요"라고 요구 조건과 예산을 담아 보내는 문서.',
       example: '쇼핑몰 제작을 위해 3개 개발사에 RFP 발송 및 제안서 수령'
     },
+    // PM 아카데미 심화 용어 (Notion)
+    {
+      id: 'request-requirement',
+      category: 'planning',
+      categoryLabel: '기획 & PM',
+      title: 'Request vs Requirement (요청 vs 요구사항)',
+      def: 'Request는 고객/이해관계자가 수단으로 제시하는 단순 요청, Requirement는 요청의 숨은 의도를 분석하여 문제, 정책, 예외 흐름, 성공 기준을 명세한 요구사항.',
+      example: '요청: "채팅 기능 넣어주세요" ➔ 요구사항: "사용자 이탈률 30% 방지를 위한 1:1 라이브 문의 인터페이스 명세"'
+    },
+    {
+      id: 'user-story',
+      category: 'planning',
+      categoryLabel: '기획 & PM',
+      title: 'User Story (유저 스토리)',
+      def: '"As a [사용자], I want [행동], So that [얻고 싶은 가치]" 구조로 사용자 관점에서 기능의 필요 목적과 가치를 정의하는 문장.',
+      example: '"배달 고객으로서, 최저가 쿠폰이 자동 적용되길 원한다. 그래야 번거로움 없이 빠른 결제가 가능하기 때문이다."'
+    },
+    {
+      id: 'ac',
+      category: 'planning',
+      categoryLabel: '기획 & PM',
+      title: 'Acceptance Criteria (AC - 인수 조건)',
+      def: '개발 및 QA팀이 기능의 완성을 객관적으로 판단하고 테스트할 수 있는 성공/실패 기준 명세 (Given-When-Then).',
+      example: 'Given 장바구니 쿠폰 2개 이상일 때, When 주문서 진입 시, Then 최고 할인 쿠폰 자동 선택'
+    },
+    {
+      id: 'boundary-case',
+      category: 'planning',
+      categoryLabel: '기획 & PM',
+      title: 'Boundary Case (경계 예외 조건 / 엣지 케이스)',
+      def: '정상 성공 흐름과 일반 실패 흐름 사이의 애매한 경계 상황 조건. 개발자 임의 판단 방지 및 QA 테스트의 필수 기준.',
+      example: '인증 유효시간(5분) 경계인 4분 59초 입력 시 성공 여부, 1초 간격 10회 연속 버튼 클릭 시 재발송 정책'
+    },
+    {
+      id: 'voc',
+      category: 'planning',
+      categoryLabel: '기획 & PM',
+      title: 'VOC (Voice of Customer - 고객의 소리)',
+      def: '고객이 서비스 이용 과정에서 실제로 겪은 불만이나 의견. PM은 VOC를 데이터 지표와 결합해 최우선 과제를 발굴.',
+      example: 'VOC: "로그인이 안 돼요!" ➔ PM 분석: 특정 앱 버전에서 세션 만료시간 오류로 인한 결제 이탈률 42% 증가 확인'
+    },
+    {
+      id: 'prd',
+      category: 'planning',
+      categoryLabel: '기획 & PM',
+      title: 'PRD (Product Requirement Document - 제품 요구사항 문서)',
+      def: '제품 개발의 배경, 문제 정의, 목표 지표, User Story, 핵심 요구사항, AC, 성공 지표를 종합 정리한 팀의 핵심 의사결정 문서.',
+      example: '전화 문의 비중을 70%에서 30%로 감축하기 위한 온라인 날짜/시간 예약 시스템 PRD 작성'
+    },
+    {
+      id: 'rice',
+      category: 'planning',
+      categoryLabel: '기획 & PM',
+      title: 'RICE Framework (RICE 우선순위 계산법)',
+      def: 'PM이 기능 개발의 우선순위를 객관적으로 산출하는 공식: RICE Score = (Reach × Impact × Confidence) / Effort',
+      example: 'Reach(1000명) × Impact(3점) × Confidence(80%) / Effort(2개월) = 1,200점'
+    },
+    {
+      id: 'impact-effort',
+      category: 'planning',
+      categoryLabel: '기획 & PM',
+      title: 'Impact / Effort Matrix (영향도 / 난이도 행렬)',
+      def: '사용자 및 비즈니스 영향도(Impact)와 개발 난이도/공수(Effort)를 4분면에 매핑하여 Quick Win(적은 공수·높은 효과) 우선순위를 선정하는 기법.',
+      example: '로그인 오류 수정: 높은 영향도 + 적은 공수 ➔ 1순위 개발 배치'
+    },
+    {
+      id: 'po-vs-pm',
+      category: 'planning',
+      categoryLabel: '기획 & PM',
+      title: 'PO vs PM (Product Owner vs Product Manager)',
+      def: 'PO는 제품 비전과 백로그 수립("어디로 갈 것인가"), PM은 문제 정의 및 요구사항 명세("어떻게 실행할 것인가")에 집중.',
+      example: 'PO: "이번 분기 결제 전환율 20% 달성 목표 설정" ➔ PM: "쿠폰 자동 적용 및 결제 동선 단축 요구사항 명세"'
+    },
+    {
+      id: 'happy-exception-flow',
+      category: 'planning',
+      categoryLabel: '기획 & PM',
+      title: 'Happy Path vs Exception Flow (정상 흐름 vs 예외 흐름)',
+      def: 'Happy Path는 오류 없이 진행되는 정상 시나리오, Exception Flow는 네트워크 단절, 입력 오류 등 예외 시의 팝업 및 복구 흐름.',
+      example: 'Happy Path: 이메일 입력 ➔ 인증번호 수신 ➔ 성공 / Exception Flow: 미등록 이메일 ➔ "가입되지 않은 이메일" 안내'
+    },
+    {
+      id: 'mvp',
+      category: 'planning',
+      categoryLabel: '기획 & PM',
+      title: 'MVP (Minimum Viable Product - 최소 기능 제품)',
+      def: '사용자에게 핵심 가치를 제공하는 최소한의 기능만을 구현하여 시장과 고객의 반응을 빠르게 테스트하는 초기 제품.',
+      example: '복잡한 AI 추천 시스템 대신, 인기도 순 상품 나열 기능만으로 먼저 출시하여 구매 전환율 검증'
+    },
+    {
+      id: 'kpi-nsm',
+      category: 'planning',
+      categoryLabel: '기획 & PM',
+      title: 'KPI & North Star Metric (핵심 성과 지표 & 북극성 지표)',
+      def: 'KPI는 기능/팀 단위의 성과 지표, 북극성 지표(North Star Metric)는 제품 전체가 고객에게 제공하는 장기적 핵심 가치 지표.',
+      example: '북극성 지표: "주간 1회 이상 주문 완료 사용자 수", KPI: "장바구니 결제 전환율 15%"'
+    },
+    {
+      id: 'funnel-retention',
+      category: 'planning',
+      categoryLabel: '기획 & PM',
+      title: 'Funnel & Retention (퍼널 분석 & 재방문율)',
+      def: 'Funnel은 유입부터 결제까지 단계별 사용자 이탈률 분석, Retention은 사용자가 일정 기간 후 다시 서비스를 방문하는 비율.',
+      example: '메인(100명) ➔ 상세(60명) ➔ 장바구니(30명) ➔ 결제(15명) 퍼널 이탈 구간 집중 개선'
+    },
+    {
+      id: 'jwt-oauth',
+      category: 'dev',
+      categoryLabel: '개발 & API',
+      title: 'JWT & OAuth (인증 토큰 & 소셜 로그인)',
+      def: 'JWT는 로그인 상태를 암호화된 토큰으로 안전하게 전달하는 방식, OAuth는 카카오/네이버 계정으로 간편 가입을 지원하는 프로토콜.',
+      example: '카카오 1초 로그인(OAuth) 성공 후 전달받은 JWT 토큰으로 사용자 세션 유지'
+    },
 
     // 2. 디자인 & UI/UX 용어
     {

@@ -9,7 +9,8 @@ import SubPageDesign from './pages/SubPageDesign';
 import SubPagePublishing from './pages/SubPagePublishing';
 import SubPageDevelopment from './pages/SubPageDevelopment';
 import SubPageGlossary from './pages/SubPageGlossary';
-import { mainPageToc, planningToc, designToc, publishingToc, devToc, glossaryToc } from './data/navigationData';
+import SubPagePmAcademy from './pages/SubPagePmAcademy';
+import { mainPageToc, planningToc, designToc, publishingToc, devToc, glossaryToc, pmAcademyToc } from './data/navigationData';
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -100,6 +101,8 @@ export default function App() {
         return devToc;
       case '/learn/glossary':
         return glossaryToc;
+      case '/learn/pm-academy':
+        return pmAcademyToc;
       case '/':
       default:
         return mainPageToc;
@@ -119,6 +122,8 @@ export default function App() {
         return <SubPageDevelopment onSelectRoute={handleSelectRoute} />;
       case '/learn/glossary':
         return <SubPageGlossary onSelectRoute={handleSelectRoute} />;
+      case '/learn/pm-academy':
+        return <SubPagePmAcademy onSelectRoute={handleSelectRoute} />;
       case '/':
       default:
         return <MainPage onSelectRoute={handleSelectRoute} />;

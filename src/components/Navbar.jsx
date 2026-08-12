@@ -98,6 +98,7 @@ export default function Navbar({
               { title: '퍼블리싱', path: '/learn/publishing' },
               { title: '웹 개발', path: '/learn/dev' },
               { title: '용어 정리', path: '/learn/glossary' },
+              { title: 'PM 아카데미', path: '/learn/pm-academy' },
             ].map((nav) => (
               <button
                 key={nav.path}
