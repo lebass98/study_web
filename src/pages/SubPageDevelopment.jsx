@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Callout from '../components/Callout';
-import QuizCard from '../components/QuizCard';
+import QuizPack from '../components/QuizPack';
+import { developmentQuizzes } from '../data/quizData';
 import { 
   ArrowLeft, 
   ArrowRight, 
@@ -284,20 +285,10 @@ document.querySelector('button').addEventListener('click', () => {
 
       {/* Section 5: Quiz */}
       <section id="quiz" className="scroll-mt-24 mb-12">
-        <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200/80 dark:border-white/10 pb-2">
-          5. 개발 이해도 확인 퀴즈
-        </h2>
-
-        <QuizCard
-          question="서버 데이터베이스에서 기존 데이터(예: 상품 목록, 내 프로필)를 단순히 읽어오고 조회할 때 주로 사용되는 HTTP 메서드는 무엇인가요?"
-          options={[
-            "1) GET",
-            "2) POST",
-            "3) DELETE",
-            "4) OPTION"
-          ]}
-          correctAnswerIndex={0}
-          explanation="정답입니다! GET 메서드는 서버나 데이터베이스의 상태를 변경하지 않고 단순히 데이터를 조회(가져오기)할 때 사용하는 표준 HTTP 메서드입니다."
+        <QuizPack
+          title="4. 웹 개발 & API 마스터 퀴즈 10선"
+          subtitle="프론트엔드/백엔드 차이, REST API 4대 메서드(GET/POST/PUT/DELETE), DB 인덱스, JSON 통신을 10개 퀴즈로 마스터해보세요!"
+          quizzes={developmentQuizzes}
         />
       </section>
 

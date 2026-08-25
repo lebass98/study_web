@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Callout from '../components/Callout';
+import QuizPack from '../components/QuizPack';
+import { mainPageQuizzes } from '../data/quizData';
 import { ArrowRight, Monitor, Server, Database, Globe, Zap, CheckCircle2, Play, Sparkles, ShoppingCart, Image as ImageIcon } from 'lucide-react';
 import { triggerHaptic } from '../utils/appleHaptics';
 
@@ -385,6 +387,15 @@ export default function MainPage({ onSelectRoute }) {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Section 6: Comprehensive Quiz */}
+      <section id="quiz" className="scroll-mt-24 mb-12">
+        <QuizPack
+          title="🌱 웹 기초 상식 마스터 퀴즈 10선"
+          subtitle="식당 비유로 배운 클라이언트, 서버, DB, API, DNS, 웹 3대 기술을 10개 퀴즈로 복습해보세요!"
+          quizzes={mainPageQuizzes}
+        />
       </section>
 
       {/* Summary */}

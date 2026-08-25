@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Callout from '../components/Callout';
-import QuizCard from '../components/QuizCard';
+import QuizPack from '../components/QuizPack';
+import { planningQuizzes } from '../data/quizData';
 import { 
   ArrowLeft, 
   ArrowRight, 
@@ -300,20 +301,10 @@ export default function SubPagePlanning({ onSelectRoute }) {
 
       {/* Section 5: Quiz */}
       <section id="quiz" className="scroll-mt-24 mb-12">
-        <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200/80 dark:border-white/10 pb-2">
-          5. 기획 이해도 확인 퀴즈
-        </h2>
-
-        <QuizCard
-          question="화면의 버튼 배치 스케치(와이어프레임) 위에 '버튼 클릭 시 일어나는 세부 동작 설명(Description)'을 함께 작성하는 종합 기획 문서를 무엇이라 부르나요?"
-          options={[
-            "1) 데이터베이스 테이블 명세서",
-            "2) 화면설계서 (Storyboard / SB)",
-            "3) CSS 스타일시트 문서",
-            "4) Git 소스 코드 커밋 로그"
-          ]}
-          correctAnswerIndex={1}
-          explanation="정답입니다! 화면설계서(Storyboard/SB)는 화면 구조와 상세한 설명(Description)을 함께 기록하여 디자이너와 개발자가 제작 지침으로 삼는 최종 설계도입니다."
+        <QuizPack
+          title="1. 웹 기획 마스터 퀴즈 10선"
+          subtitle="와이어프레임, IA, 화면설계서(SB), WBS 핵심 개념을 10개 퀴즈로 정복해보세요!"
+          quizzes={planningQuizzes}
         />
       </section>
 

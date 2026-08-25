@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Callout from '../components/Callout';
-import QuizCard from '../components/QuizCard';
+import QuizPack from '../components/QuizPack';
+import { pmAcademyQuizzes } from '../data/quizData';
 import { 
   BookOpen, 
   Brain, 
@@ -12,21 +13,21 @@ import {
   MessageSquare, 
   TrendingUp, 
   Calculator, 
-  Sparkles,
-  ArrowRight,
-  ShieldCheck,
-  Zap,
-  Award,
-  Copy,
-  Check,
-  Compass,
-  Ship,
-  Wrench,
-  HelpCircle,
-  Clock,
-  ThumbsUp,
-  Lightbulb,
-  CheckCircle2
+  Sparkles, 
+  ArrowRight, 
+  ShieldCheck, 
+  Zap, 
+  Award, 
+  Copy, 
+  Check, 
+  Compass, 
+  Ship, 
+  Wrench, 
+  HelpCircle, 
+  Clock, 
+  ThumbsUp, 
+  Lightbulb, 
+  CheckCircle2 
 } from 'lucide-react';
 import { triggerHaptic } from '../utils/appleHaptics';
 
@@ -572,33 +573,10 @@ export default function SubPagePmAcademy({ onSelectRoute }) {
 
       {/* Interactive Quiz Challenges */}
       <section className="scroll-mt-24 mb-12 not-prose">
-        <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200/80 dark:border-white/10 pb-2 flex items-center gap-2">
-          <HelpCircle className="w-6 h-6 text-cyan-500" />
-          초보 PM 이해도 쑥쑥 퀴즈
-        </h2>
-
-        <QuizCard 
-          question="Q1. 마케팅팀에서 '우리 앱에도 인기 상품 찜하기 버튼 만들어주세요!'라고 요청했습니다. 좋은 PM의 올바른 첫 반응은 무엇일까요?"
-          options={[
-            "네 알겠습니다! 당장 개발팀에 가서 찜 버튼을 만들어달라고 한다.",
-            "왜 찜하기 기능이 필요하신지, 어떤 사용자 문제를 해결하고 싶은지 의도와 배경 데이터를 먼저 묻는다.",
-            "화면 디자인이 먼저니까 피그마를 켜서 하트 모양 아이콘부터 예쁘게 그린다.",
-            "개발팀 일정이 바쁘니 무조건 안 된다고 단칼에 거절한다."
-          ]}
-          correctAnswerIndex={1}
-          explanation="정답입니다! 단순 요청(Request)을 그대로 수용하지 않고, 요청의 배경에 있는 진짜 문제와 해결하려는 목적(Requirement)을 먼저 파악하는 것이 PM의 가장 중요한 역할입니다."
-        />
-
-        <QuizCard 
-          question="Q2. 개발 및 QA팀에게 기능 개발 완료 여부를 객관적으로 판단할 수 있도록 'Given - When - Then' 형식으로 작성해주는 기준 문서는 무엇일까요?"
-          options={[
-            "IA (정보구조도)",
-            "User Story (유저 스토리)",
-            "Acceptance Criteria (AC - 인수 조건)",
-            "Design System (디자인 시스템)"
-          ]}
-          correctAnswerIndex={2}
-          explanation="정답입니다! Acceptance Criteria(인수 조건)는 '특정 상황(Given)에서 사용자가 행동(When)했을 때 어떤 결과(Then)가 나와야 합격인가'를 명시하는 완성 기준표입니다."
+        <QuizPack
+          title="5. PM 아카데미 실전 마스터 퀴즈 10선"
+          subtitle="PO/PM 역할, 유저 스토리, AC 인수조건, RICE 우선순위, PRD, 북극성 지표를 10개 퀴즈로 정복해보세요!"
+          quizzes={pmAcademyQuizzes}
         />
       </section>
 

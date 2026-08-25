@@ -9,6 +9,7 @@ export const sidebarCategories = [
       { id: 'client-server', title: '클라이언트 vs 서버', path: '/#client-server', badge: '기초' },
       { id: 'roles-step', title: '웹 제작 5대 직군 개요', path: '/#roles' },
       { id: 'demo-step', title: '실시간 API/DB 시뮬레이터', path: '/#live-demo' },
+      { id: 'main-quiz', title: '웹 기초 상식 퀴즈 10선', path: '/#quiz', badge: '10문항' },
     ]
   },
   {
@@ -19,7 +20,7 @@ export const sidebarCategories = [
       { id: 'ia-wireframe', title: '정보구조도(IA) & 화면설계서(SB)', path: '/learn/planning#ia', badge: '기획' },
       { id: 'wbs-schedule', title: 'WBS 및 프로젝트 일정 관리', path: '/learn/planning#wbs' },
       { id: 'planning-demo', title: '실습: 와이어프레임 빌더', path: '/learn/planning#live-demo' },
-      { id: 'planning-quiz', title: '기획 이해도 확인 퀴즈', path: '/learn/planning#quiz' },
+      { id: 'planning-quiz', title: '기획 마스터 퀴즈 10선', path: '/learn/planning#quiz', badge: '10문항' },
     ]
   },
   {
@@ -29,7 +30,7 @@ export const sidebarCategories = [
       { id: 'design-system', title: '디자인 시스템 (Tokens)', path: '/learn/design#system', badge: '디자인', isMain: true },
       { id: 'figma-collaboration', title: 'Figma 협업 및 시안 전달', path: '/learn/design#figma' },
       { id: 'design-demo', title: '실습: 디자인 토큰 조절기', path: '/learn/design#live-demo' },
-      { id: 'design-quiz', title: '디자인 이해도 확인 퀴즈', path: '/learn/design#quiz' },
+      { id: 'design-quiz', title: '디자인 마스터 퀴즈 10선', path: '/learn/design#quiz', badge: '10문항' },
     ]
   },
   {
@@ -40,7 +41,7 @@ export const sidebarCategories = [
       { id: 'css-styling', title: 'CSS: 디자인과 스타일', path: '/learn/publishing#css' },
       { id: 'responsive-layout', title: '반응형 웹과 Flexbox', path: '/learn/publishing#responsive' },
       { id: 'publishing-demo', title: '실습: HTML/CSS 라이브 코드', path: '/learn/publishing#live-demo' },
-      { id: 'publishing-quiz', title: '퍼블리싱 이해도 퀴즈', path: '/learn/publishing#quiz' },
+      { id: 'publishing-quiz', title: '퍼블리싱 마스터 퀴즈 10선', path: '/learn/publishing#quiz', badge: '10문항' },
     ]
   },
   {
@@ -51,7 +52,7 @@ export const sidebarCategories = [
       { id: 'backend-db', title: '백엔드 서버 & DB 역할', path: '/learn/dev#backend' },
       { id: 'api-database', title: 'REST API & DB 통신', path: '/learn/dev#api', badge: '핵심' },
       { id: 'dev-demo', title: '실습: 회원가입 API & DB 연동', path: '/learn/dev#live-demo' },
-      { id: 'dev-quiz', title: '개발 이해도 확인 퀴즈', path: '/learn/dev#quiz' },
+      { id: 'dev-quiz', title: '개발 마스터 퀴즈 10선', path: '/learn/dev#quiz', badge: '10문항' },
     ]
   },
   {
@@ -65,6 +66,7 @@ export const sidebarCategories = [
       { id: 'pm-boundary-voc', title: 'Boundary Case & VOC', path: '/learn/pm-academy#boundary-voc' },
       { id: 'pm-prd-priority', title: 'PRD & RICE 우선순위', path: '/learn/pm-academy#prd-priority' },
       { id: 'pm-case-study', title: '실무 케이스 분석', path: '/learn/pm-academy#case-study' },
+      { id: 'pm-quiz', title: '실전 PM 퀴즈 10선', path: '/learn/pm-academy#quiz', badge: '10문항' },
       { id: 'pm-templates', title: 'PM 템플릿 & 커리큘럼', path: '/learn/pm-academy#templates-curriculum' },
     ]
   },
@@ -99,6 +101,7 @@ export const mainPageToc = [
   { id: 'client-server', title: '4. 클라이언트 vs 서버' },
   { id: 'roles', title: '5. 웹 제작 5대 직군 개요' },
   { id: 'live-demo', title: '6. 실시간 API/DB 시뮬레이터' },
+  { id: 'quiz', title: '7. 웹 기초 상식 퀴즈 10선' },
   { id: 'summary', title: '다음 단계 가기' }
 ];
 
@@ -110,6 +113,7 @@ export const pmAcademyToc = [
   { id: 'boundary-voc', title: '4. Boundary Case와 VOC' },
   { id: 'prd-priority', title: '5. PRD와 RICE 우선순위' },
   { id: 'case-study', title: '6. 실무 케이스 분석' },
+  { id: 'quiz', title: '실전 PM 퀴즈 10선' },
   { id: 'templates-curriculum', title: '7. PM 템플릿 & 커리큘럼' },
 ];
 

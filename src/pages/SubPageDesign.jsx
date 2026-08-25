@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Callout from '../components/Callout';
-import QuizCard from '../components/QuizCard';
+import QuizPack from '../components/QuizPack';
+import { designQuizzes } from '../data/quizData';
 import { 
   ArrowLeft, 
   ArrowRight, 
@@ -271,20 +272,10 @@ export default function SubPageDesign({ onSelectRoute }) {
 
       {/* Section 4: Quiz */}
       <section id="quiz" className="scroll-mt-24 mb-12">
-        <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200/80 dark:border-white/10 pb-2">
-          4. 디자인 이해도 확인 퀴즈
-        </h2>
-
-        <QuizCard
-          question="버튼의 색상 코드(#087ea4)나 여백 크기(16px), 폰트 두께처럼 일관된 브랜드 규칙을 코드로 규격화한 단위를 무엇이라 하나요?"
-          options={[
-            "1) 데이터베이스 쿼리문",
-            "2) 디자인 토큰 (Design Tokens)",
-            "3) 도메인 네임 서버(DNS)",
-            "4) Git 소스 코드 커밋 로그"
-          ]}
-          correctAnswerIndex={1}
-          explanation="정답입니다! 디자인 토큰(Design Tokens)은 색상, 폰트, 여백 등 브랜드 디자인 요소들을 코드로 정의한 최소 단위의 표준 규격입니다."
+        <QuizPack
+          title="2. 웹 디자인 & UI/UX 마스터 퀴즈 10선"
+          subtitle="UI/UX 차이, 디자인 시스템, 토큰, 피그마 협업 등 핵심 개념을 10개 퀴즈로 마스터해보세요!"
+          quizzes={designQuizzes}
         />
       </section>
 

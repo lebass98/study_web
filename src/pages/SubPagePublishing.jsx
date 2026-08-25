@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Callout from '../components/Callout';
 import CodePlayground from '../components/CodePlayground';
-import QuizCard from '../components/QuizCard';
+import QuizPack from '../components/QuizPack';
+import { publishingQuizzes } from '../data/quizData';
 import { 
   ArrowLeft, 
   ArrowRight, 
@@ -224,20 +225,10 @@ export default function SubPagePublishing({ onSelectRoute }) {
 
       {/* Section 5: Quiz */}
       <section id="quiz" className="scroll-mt-24 mb-12">
-        <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200/80 dark:border-white/10 pb-2">
-          5. 퍼블리싱 이해도 확인 퀴즈
-        </h2>
-
-        <QuizCard
-          question="웹 페이지에서 '글자 색상, 여백, 모서리 둥글기 등 시각적 디자인'을 담당하는 언어는 무엇인가요?"
-          options={[
-            "1) HTML",
-            "2) CSS",
-            "3) SQL",
-            "4) Java"
-          ]}
-          correctAnswerIndex={1}
-          explanation="정답입니다! HTML이 뼈대(구조)를 만든다면, CSS는 웹 페이지의 시각적인 스타일과 디자인 레이아웃을 담당합니다."
+        <QuizPack
+          title="3. 웹 퍼블리싱 마스터 퀴즈 10선"
+          subtitle="HTML 시맨틱 태그, CSS 박스모델(Margin/Padding), Flexbox, 반응형 웹 미디어쿼리 개념을 10개 퀴즈로 마스터해보세요!"
+          quizzes={publishingQuizzes}
         />
       </section>
 
