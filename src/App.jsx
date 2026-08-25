@@ -152,6 +152,9 @@ export default function App() {
           onSelectRoute={handleSelectRoute}
           isMobileOpen={isMobileSidebarOpen}
           onCloseMobile={() => setIsMobileSidebarOpen(false)}
+          darkMode={darkMode}
+          onToggleTheme={() => setDarkMode(!darkMode)}
+          onOpenSearch={() => setIsSearchOpen(true)}
         />
 
         {/* Center Main Doc Content - Expanded 100% Fluid Width */}

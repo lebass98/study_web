@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, Sun, Moon, Languages, Github } from 'lucide-react';
+import { Search, Sun, Moon, Languages, Github, Menu, X } from 'lucide-react';
 import { triggerHaptic } from '../utils/appleHaptics';
 
 export default function Navbar({ 
@@ -143,6 +143,23 @@ export default function Navbar({
           >
             <Github className="w-5 h-5" />
           </a>
+
+          {/* Mobile Hamburger Menu Button (맨 상단 우측) */}
+          <button
+            onClick={() => {
+              triggerHaptic('medium');
+              onToggleMobileSidebar();
+            }}
+            className="md:hidden p-2 text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 active:scale-95 transition-all cursor-pointer flex items-center justify-center"
+            aria-label={isMobileSidebarOpen ? '메뉴 닫기' : '메뉴 열기'}
+            aria-expanded={isMobileSidebarOpen}
+          >
+            {isMobileSidebarOpen ? (
+              <X className="w-6 h-6 text-slate-800 dark:text-slate-100" />
+            ) : (
+              <Menu className="w-6 h-6 text-slate-800 dark:text-slate-100" />
+            )}
+          </button>
         </div>
       </div>
     </header>
