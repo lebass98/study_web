@@ -42,10 +42,7 @@ export default function Navbar({
 
             <div className="flex items-baseline gap-1.5">
               <span className="font-extrabold text-xl sm:text-2xl text-slate-900 dark:text-white tracking-tight">
-                React
-              </span>
-              <span className="text-base font-mono font-medium text-slate-500 dark:text-slate-400">
-                v19.2
+                Glory Study
               </span>
             </div>
           </button>

@@ -195,10 +195,10 @@ export default function Sidebar({
                 </div>
                 <div className="flex flex-col">
                   <span className="font-extrabold text-lg text-slate-900 dark:text-white leading-tight">
-                    학습 메뉴
+                    Glory Study
                   </span>
                   <span className="text-base text-slate-500 dark:text-slate-400 font-medium">
-                    React v19.2 가이드
+                    웹 개발 학습 가이드
                   </span>
                 </div>
               </div>
