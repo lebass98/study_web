@@ -126,7 +126,7 @@ export default function SubPagePmAcademy({ onSelectRoute }) {
 
         {/* 찰떡 비유 배 항해 카드 */}
         <div className="my-6 p-6 rounded-3xl apple-glass-card border border-cyan-500/20 not-prose">
-          <h3 className="text-base font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+          <h3 className="text-base font-bold text-slate-900 dark:text-white my-0 flex items-center gap-2">
             <Ship className="w-5 h-5 text-cyan-500" /> 🚢 '항해하는 배'로 1초 만에 이해하는 직군 차이
           </h3>
           
@@ -165,7 +165,7 @@ export default function SubPagePmAcademy({ onSelectRoute }) {
 
         {/* PM의 5단계 일하는 방식 */}
         <div className="my-6 p-6 rounded-3xl bg-white dark:bg-[#181a20] text-slate-900 dark:text-slate-100 not-prose shadow-2xs border border-slate-200 dark:border-slate-800">
-          <h3 className="text-base font-bold text-[#087ea4] dark:text-sky-400 mb-2 flex items-center gap-2">
+          <h3 className="text-base font-bold text-[#087ea4] dark:text-sky-400 my-0 flex items-center gap-2">
             <Zap className="w-5 h-5" /> PM이 일하는 5단계 사이클 (실제 예시로 보기)
           </h3>
           <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">
@@ -254,7 +254,7 @@ export default function SubPagePmAcademy({ onSelectRoute }) {
         </div>
 
         {/* 요구사항 명세 가이드 */}
-        <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mt-8 mb-3">
+        <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 my-0">
           개발자가 반하는 친절한 요구사항 작성법
         </h3>
         <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-4">
@@ -346,7 +346,7 @@ export default function SubPagePmAcademy({ onSelectRoute }) {
           4. 경계 조건(Boundary Case)과 고객의 소리(VOC)
         </h2>
 
-        <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-3">
+        <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 my-0">
           Boundary Case (경계 조건 / 엣지 케이스)란?
         </h3>
         <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
@@ -366,7 +366,7 @@ export default function SubPagePmAcademy({ onSelectRoute }) {
           </ul>
         </div>
 
-        <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mt-8 mb-3">
+        <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 my-0">
           VOC(Voice of Customer): 화난 고객의 목소리에서 보물 찾기
         </h3>
         <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
@@ -410,7 +410,7 @@ export default function SubPagePmAcademy({ onSelectRoute }) {
           <strong>"우리가 왜 이 기능을 만드는지, 무엇을 언제까지 만들어야 하는지"</strong>를 명확히 안내하는 제품 기획서입니다.
         </p>
 
-        <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mt-6 mb-3">
+        <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 my-0">
           RICE 프레임워크: 무엇을 먼저 만들까?
         </h3>
         <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
@@ -609,7 +609,7 @@ export default function SubPagePmAcademy({ onSelectRoute }) {
           7. 실전 PRD 템플릿 & 핵심 요약
         </h2>
 
-        <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-3">
+        <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 my-0">
           실무에서 바로 쓰는 초보자용 PRD 템플릿
         </h3>
         <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-4">
@@ -630,7 +630,7 @@ export default function SubPagePmAcademy({ onSelectRoute }) {
           </pre>
         </div>
 
-        <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mt-8 mb-3">
+        <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 my-0">
           초보 PM이 마음속에 새겨둘 5가지 황금 원칙
         </h3>
 
