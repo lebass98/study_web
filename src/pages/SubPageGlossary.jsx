@@ -328,7 +328,7 @@ export default function SubPageGlossary({ onSelectRoute }) {
       {/* Page Header Metadata */}
       <div className="border-b border-slate-200/80 dark:border-white/10 pb-6 mb-8">
         <div className="flex items-center gap-2 text-sm font-semibold text-cyan-600 dark:text-cyan-400 mb-2">
-          <span>5. 용어 정리</span>
+          <span>6. 용어 정리</span>
           <span>/</span>
           <span>웹 핵심 용어 사전</span>
         </div>
@@ -448,12 +448,12 @@ export default function SubPageGlossary({ onSelectRoute }) {
           <button
             onClick={() => {
               triggerHaptic('light');
-              onSelectRoute('/learn/dev');
+              onSelectRoute('/learn/pm-academy');
             }}
             className="px-5 py-3 rounded-xl border border-slate-300 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/10 text-slate-700 dark:text-slate-300 font-semibold text-base flex items-center justify-center gap-2 transition-all apple-btn cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span>이전: 4. 웹 개발</span>
+            <span>이전: 5. PM 아카데미</span>
           </button>
 
           <button

@@ -253,11 +253,11 @@ document.querySelector('button').addEventListener('click', () => {
           <button
             onClick={() => {
               triggerHaptic('medium');
-              onSelectRoute('/');
+              onSelectRoute('/learn/pm-academy');
             }}
-            className="w-full sm:w-auto px-6 py-3 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-sm shadow-md flex items-center justify-center gap-2 transition-all apple-btn cursor-pointer"
+            className="w-full sm:w-auto px-6 py-3 rounded-2xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-sm shadow-md flex items-center justify-center gap-2 transition-all apple-btn cursor-pointer"
           >
-            <span>처음 학습 개요로 돌아가기</span>
+            <span>다음: 5. PM 아카데미</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>

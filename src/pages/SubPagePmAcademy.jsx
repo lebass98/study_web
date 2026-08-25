@@ -55,7 +55,7 @@ export default function SubPagePmAcademy({ onSelectRoute }) {
       {/* Page Header Metadata */}
       <div className="border-b border-slate-200/80 dark:border-white/10 pb-6 mb-8">
         <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-cyan-600 dark:text-cyan-400 mb-2">
-          <span>6. PM 아카데미</span>
+          <span>5. PM 아카데미</span>
           <span>/</span>
           <span>Notion 노트 정리</span>
           <span className="px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-300 border border-cyan-500/20 text-[11px] font-bold">
@@ -659,11 +659,11 @@ export default function SubPagePmAcademy({ onSelectRoute }) {
           <button
             onClick={() => {
               triggerHaptic('light');
-              onSelectRoute('/learn/planning');
+              onSelectRoute('/learn/dev');
             }}
             className="w-full sm:w-auto px-5 py-3 rounded-2xl bg-slate-100 dark:bg-white/10 text-slate-700 dark:text-slate-200 font-bold text-sm flex items-center justify-center gap-2 hover:bg-slate-200 dark:hover:bg-white/20 transition-all cursor-pointer"
           >
-            ← 1. 웹 기획 기초로 돌아가기
+            ← 4. 웹 개발로 돌아가기
           </button>
 
           <button
@@ -673,7 +673,7 @@ export default function SubPagePmAcademy({ onSelectRoute }) {
             }}
             className="w-full sm:w-auto px-6 py-3 rounded-2xl bg-cyan-600 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20 hover:bg-cyan-500 transition-all cursor-pointer"
           >
-            <span>5. 웹 용어 사전 보러가기</span>
+            <span>6. 웹 용어 사전 보러가기</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>

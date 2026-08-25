@@ -55,17 +55,6 @@ export const sidebarCategories = [
     ]
   },
   {
-    id: 'web-glossary',
-    title: '웹 용어 정리',
-    items: [
-      { id: 'glossary-main', title: '용어 사전 사용법', path: '/learn/glossary', badge: '용어사전', isMain: true },
-      { id: 'planning-terms', title: '기획 & PM 용어 정리', path: '/learn/glossary#planning-terms' },
-      { id: 'design-terms', title: '디자인 & UI/UX 용어 정리', path: '/learn/glossary#design-terms' },
-      { id: 'publishing-terms', title: '퍼블리싱 HTML/CSS 용어', path: '/learn/glossary#publishing-terms' },
-      { id: 'dev-terms', title: '개발 & API/DB 통신 용어', path: '/learn/glossary#dev-terms' },
-    ]
-  },
-  {
     id: 'pm-academy',
     title: 'PM 아카데미',
     items: [
@@ -78,13 +67,24 @@ export const sidebarCategories = [
       { id: 'pm-case-study', title: '실무 케이스 분석', path: '/learn/pm-academy#case-study' },
       { id: 'pm-templates', title: 'PM 템플릿 & 커리큘럼', path: '/learn/pm-academy#templates-curriculum' },
     ]
+  },
+  {
+    id: 'web-glossary',
+    title: '웹 용어 정리',
+    items: [
+      { id: 'glossary-main', title: '용어 사전 사용법', path: '/learn/glossary', badge: '용어사전', isMain: true },
+      { id: 'planning-terms', title: '기획 & PM 용어 정리', path: '/learn/glossary#planning-terms' },
+      { id: 'design-terms', title: '디자인 & UI/UX 용어 정리', path: '/learn/glossary#design-terms' },
+      { id: 'publishing-terms', title: '퍼블리싱 HTML/CSS 용어', path: '/learn/glossary#publishing-terms' },
+      { id: 'dev-terms', title: '개발 & API/DB 통신 용어', path: '/learn/glossary#dev-terms' },
+    ]
   }
 ];
 
 export const searchIndex = [
   { title: '누구나 쉽게 이해하는 웹 개발 핵심 개념 개요', category: '웹 시작하기', path: '/', snippet: '웹 통신 구조, 브라우저, 서버, 데이터베이스의 전체 흐름' },
-  { title: '웹 핵심 용어 정리 사전', category: '5. 웹 용어 정리', path: '/learn/glossary', snippet: '기획, 디자인, 퍼블리싱, 개발 필수 전문 용어 한눈에 정리' },
-  { title: 'PM 아카데미 노트 정리 (Notion)', category: '6. PM 아카데미', path: '/learn/pm-academy', snippet: '문제 정의, 요구사항 작성, User Story, AC, PRD, RICE 우선순위, 실무 케이스' },
+  { title: 'PM 아카데미 노트 정리 (Notion)', category: '5. PM 아카데미', path: '/learn/pm-academy', snippet: '문제 정의, 요구사항 작성, User Story, AC, PRD, RICE 우선순위, 실무 케이스' },
+  { title: '웹 핵심 용어 정리 사전', category: '6. 웹 용어 정리', path: '/learn/glossary', snippet: '기획, 디자인, 퍼블리싱, 개발 필수 전문 용어 한눈에 정리' },
   { title: '클라이언트와 서버의 역할 비교', category: '웹 시작하기', path: '/#client-server', snippet: '화면 표시(클라이언트) vs 데이터 처리 및 인증(서버)' },
   { title: '웹 기획', category: '1. 웹 기획', path: '/learn/planning', snippet: '기획자 역할, 정보구조도, 와이어프레임, 화면설계서' },
   { title: '웹 디자인', category: '2. 웹 디자인', path: '/learn/design', snippet: '디자인 시스템, 색상 토큰, 시안 전달, 사용자 경험 디자인 기초' },
