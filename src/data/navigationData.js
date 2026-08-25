@@ -84,14 +84,58 @@ export const sidebarCategories = [
 ];
 
 export const searchIndex = [
-  { title: '누구나 쉽게 이해하는 웹 개발 핵심 개념 개요', category: '웹 시작하기', path: '/', snippet: '웹 통신 구조, 브라우저, 서버, 데이터베이스의 전체 흐름' },
-  { title: 'PM 아카데미 노트 정리 (Notion)', category: '5. PM 아카데미', path: '/learn/pm-academy', snippet: '문제 정의, 요구사항 작성, User Story, AC, PRD, RICE 우선순위, 실무 케이스' },
-  { title: '웹 핵심 용어 정리 사전', category: '6. 웹 용어 정리', path: '/learn/glossary', snippet: '기획, 디자인, 퍼블리싱, 개발 필수 전문 용어 한눈에 정리' },
-  { title: '클라이언트와 서버의 역할 비교', category: '웹 시작하기', path: '/#client-server', snippet: '화면 표시(클라이언트) vs 데이터 처리 및 인증(서버)' },
-  { title: '웹 기획', category: '1. 웹 기획', path: '/learn/planning', snippet: '기획자 역할, 정보구조도, 와이어프레임, 화면설계서' },
-  { title: '웹 디자인', category: '2. 웹 디자인', path: '/learn/design', snippet: '디자인 시스템, 색상 토큰, 시안 전달, 사용자 경험 디자인 기초' },
-  { title: '웹 퍼블리싱', category: '3. 웹 퍼블리싱', path: '/learn/publishing', snippet: '구조 마크업과 스타일링, 반응형 레이아웃' },
-  { title: '웹 개발', category: '4. 웹 개발', path: '/learn/dev', snippet: '동적 이벤트 제어, 서버 요청/응답, 데이터베이스 연동' }
+  // 웹 시작하기
+  { title: '웹 개발 핵심 개념 개요', category: '웹 시작하기', path: '/', snippet: '웹 통신 구조, 브라우저, 서버, 데이터베이스의 전체 흐름' },
+  { title: '웹 서비스 6단계 동작 지도', category: '웹 시작하기', path: '/#workflow', snippet: '사용자 주소 입력부터 브라우저 렌더링까지 6단계 라이프사이클' },
+  { title: '웹이란 무엇인가?', category: '웹 시작하기', path: '/#what-is-web', snippet: '인터넷(도로)과 웹(자동차)의 차이 및 전 세계 정보망' },
+  { title: '클라이언트 vs 서버 역할 비교', category: '웹 시작하기', path: '/#client-server', snippet: '화면 표시(클라이언트) vs 데이터 처리 및 인증(서버)' },
+  { title: '웹 제작 5대 직군 개요', category: '웹 시작하기', path: '/#roles', snippet: '기획, 디자인, 퍼블리셔, 프론트엔드, 백엔드 개발자 협업' },
+  { title: '실시간 API/DB 시뮬레이터', category: '웹 시작하기', path: '/#live-demo', snippet: '장바구니 담기 동작을 통한 클라이언트-서버 실시간 데이터 통신 체험' },
+  { title: '웹 기초 상식 퀴즈 10선', category: '웹 시작하기', path: '/#quiz', snippet: '웹 개발 핵심 개념과 통신 기초 이해도 테스트' },
+
+  // 웹 기획
+  { title: '웹 기획자 및 PM의 핵심 역할', category: '웹 기획', path: '/learn/planning#role', snippet: '요구사항 정의, 비즈니스 목표 수립 및 개발/디자인 조율' },
+  { title: '정보구조도(IA) & 화면설계서(SB)', category: '웹 기획', path: '/learn/planning#ia', snippet: '메뉴 구조 트리와 와이어프레임 디스크립션 작성법' },
+  { title: 'WBS 및 프로젝트 일정 관리', category: '웹 기획', path: '/learn/planning#wbs', snippet: '작업 분할 구조도와 마일스톤 관리' },
+  { title: '와이어프레임 빌더 실습', category: '웹 기획', path: '/learn/planning#live-demo', snippet: '드래그 앤 드롭으로 컴포넌트를 조합하여 레이아웃 기획' },
+  { title: '기획 마스터 퀴즈 10선', category: '웹 기획', path: '/learn/planning#quiz', snippet: '웹 기획 및 IA/와이어프레임 핵심 퀴즈' },
+
+  // 웹 디자인
+  { title: '디자인 시스템 (Design Tokens)', category: '웹 디자인', path: '/learn/design#system', snippet: '컬러, 타이포그래피, 간격 등 일관된 UI 토큰 설계' },
+  { title: 'Figma 협업 및 시안 전달', category: '웹 디자인', path: '/learn/design#figma', snippet: '피그마 오토레이아웃, 컴포넌트 변형 및 개발자 전달 방식' },
+  { title: '디자인 토큰 조절기 실습', category: '웹 디자인', path: '/learn/design#live-demo', snippet: 'Primary 컬러와 Border Radius를 실시간으로 변경해 컴포넌트에 반영' },
+  { title: '디자인 마스터 퀴즈 10선', category: '웹 디자인', path: '/learn/design#quiz', snippet: '디자인 시스템과 피그마 핸드오프 이해도 퀴즈' },
+
+  // 웹 퍼블리싱
+  { title: 'HTML: 웹의 뼈대와 구조', category: '웹 퍼블리싱', path: '/learn/publishing#html', snippet: '시맨틱 태그(header, main, footer)와 웹 접근성' },
+  { title: 'CSS: 디자인과 스타일링', category: '웹 퍼블리싱', path: '/learn/publishing#css', snippet: 'Box Model, 색상, 마진, 패딩 및 스타일 규칙' },
+  { title: '반응형 웹과 Flexbox/Grid', category: '웹 퍼블리싱', path: '/learn/publishing#responsive', snippet: '미디어 쿼리와 유연한 레이아웃 설계' },
+  { title: 'HTML/CSS 라이브 코드 실습', category: '웹 퍼블리싱', path: '/learn/publishing#live-demo', snippet: '브라우저에서 직접 코드를 수정하고 실시간 결과를 확인하는 샌드박스' },
+  { title: '퍼블리싱 마스터 퀴즈 10선', category: '웹 퍼블리싱', path: '/learn/publishing#quiz', snippet: 'HTML5/CSS3 시맨틱 태그 및 반응형 퀴즈' },
+
+  // 웹 개발
+  { title: 'JavaScript: 웹 동적 제어', category: '웹 개발', path: '/learn/dev#js', snippet: 'DOM 조작, 이벤트 핸들링, 비동기 통신 처리' },
+  { title: '백엔드 서버 & DB 역할', category: '웹 개발', path: '/learn/dev#backend', snippet: 'Node.js, Python, RDBMS/NoSQL 데이터 영속성 관리' },
+  { title: 'REST API & HTTP 통신 구조', category: '웹 개발', path: '/learn/dev#api', snippet: 'GET, POST, PUT, DELETE 메서드와 JSON 데이터 포맷' },
+  { title: '회원가입 API & DB 연동 실습', category: '웹 개발', path: '/learn/dev#live-demo', snippet: '클라이언트 폼 전송부터 서버 검증 및 DB 저장까지 라이브 실습' },
+  { title: '개발 마스터 퀴즈 10선', category: '웹 개발', path: '/learn/dev#quiz', snippet: 'JS, REST API, 백엔드/DB 핵심 퀴즈' },
+
+  // PM 아카데미
+  { title: 'PM 아카데미 노트 전체 정리', category: 'PM 아카데미', path: '/learn/pm-academy', snippet: '문제 정의, 요구사항 작성, User Story, AC, PRD, RICE 우선순위, 실무 케이스' },
+  { title: 'PM의 역할과 핵심 사고방식', category: 'PM 아카데미', path: '/learn/pm-academy#role-mindset', snippet: '프로젝트 관리자가 아닌 비즈니스 문제 해결자로서의 PM' },
+  { title: '문제 정의와 요구사항 도출', category: 'PM 아카데미', path: '/learn/pm-academy#problem-definition', snippet: '현상 너머의 진짜 원인을 파악하는 5 Whys와 요구사항 구체화' },
+  { title: 'User Story와 Acceptance Criteria (AC)', category: 'PM 아카데미', path: '/learn/pm-academy#user-story-ac', snippet: '사용자 관점의 기능 정의와 Given-When-Then 인수조건' },
+  { title: 'Boundary Case와 VOC 분석', category: 'PM 아카데미', path: '/learn/pm-academy#boundary-voc', snippet: '예외 케이스 방어와 사용자 피드백 기반 개선 전략' },
+  { title: 'PRD 작성법 및 RICE 우선순위', category: 'PM 아카데미', path: '/learn/pm-academy#prd-priority', snippet: '제품 요구사항 정의서 작성 및 Reach, Impact, Confidence, Effort 프레임워크' },
+  { title: '실무 케이스 스터디 분석', category: 'PM 아카데미', path: '/learn/pm-academy#case-study', snippet: '실제 이커머스 장바구니/결제 전환율 개선 실전 사례' },
+  { title: '실전 PM 마스터 퀴즈 10선', category: 'PM 아카데미', path: '/learn/pm-academy#quiz', snippet: '실무 PM 핵심 역량 및 프레임워크 퀴즈' },
+
+  // 용어 정리
+  { title: '웹 핵심 용어 정리 사전', category: '용어 사전', path: '/learn/glossary', snippet: '기획, 디자인, 퍼블리싱, 개발 필수 전문 용어 한눈에 정리' },
+  { title: '기획 & PM 용어 사전', category: '용어 사전', path: '/learn/glossary#planning-terms', snippet: 'IA, SB, WBS, PRD, User Story, AC 등 기획 용어' },
+  { title: '디자인 & UI/UX 용어 사전', category: '용어 사전', path: '/learn/glossary#design-terms', snippet: 'GUI, Design System, Token, Affordance, Contrast 등 디자인 용어' },
+  { title: '퍼블리싱 HTML/CSS 용어 사전', category: '용어 사전', path: '/learn/glossary#publishing-terms', snippet: 'Semantic, Box Model, Flexbox, Media Query, Accessibility 등 퍼블리싱 용어' },
+  { title: '개발 & API/DB 통신 용어 사전', category: '용어 사전', path: '/learn/glossary#dev-terms', snippet: 'SPA, REST API, JSON, CRUD, SQL, Async/Await 등 개발 용어' }
 ];
 
 export const mainPageToc = [
