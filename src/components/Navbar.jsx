@@ -1,6 +1,7 @@
 import React from 'react';
 import { Search, Sun, Moon, Languages, Github, Menu, X } from 'lucide-react';
 import { triggerHaptic } from '../utils/appleHaptics';
+import logoImg from '../assets/images/logo.png';
 
 export default function Navbar({ 
   darkMode, 
@@ -24,21 +25,18 @@ export default function Navbar({
   return (
     <header className="sticky top-0 z-30 w-full bg-white dark:bg-[#121316] border-b border-slate-200/80 dark:border-slate-800/80 transition-colors duration-200">
       <div className="w-full px-4 sm:px-8 flex items-center justify-between h-16">
-        {/* Left: React Logo & Brand */}
+        {/* Left: Glory Study Logo & Brand */}
         <div className="flex items-center gap-3">
           <button 
             onClick={handleLogoClick}
             className="flex items-center gap-2.5 group text-left cursor-pointer apple-btn"
           >
-            {/* React Official Atom Logo Icon */}
-            <svg className="w-8 h-8 text-[#087ea4] dark:text-[#149eca] transition-transform duration-300 group-hover:rotate-45" viewBox="-11.5 -10.23174 23 20.46348">
-              <circle cx="0" cy="0" r="2.05" fill="currentColor"/>
-              <g stroke="currentColor" strokeWidth="1" fill="none">
-                <ellipse rx="11" ry="4.2"/>
-                <ellipse rx="11" ry="4.2" transform="rotate(60)"/>
-                <ellipse rx="11" ry="4.2" transform="rotate(120)"/>
-              </g>
-            </svg>
+            {/* Glory Study Brand Logo Image */}
+            <img 
+              src={logoImg} 
+              alt="Glory Study Logo" 
+              className="w-9 h-9 rounded-xl object-contain shadow-sm group-hover:scale-105 transition-transform duration-200" 
+            />
 
             <div className="flex items-baseline gap-1.5">
               <span className="font-extrabold text-xl sm:text-2xl text-slate-900 dark:text-white tracking-tight">

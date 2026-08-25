@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { sidebarCategories } from '../data/navigationData';
 import { ChevronRight, ChevronDown, X, Search, Sun, Moon, Github } from 'lucide-react';
 import { triggerHaptic } from '../utils/appleHaptics';
+import logoImg from '../assets/images/logo.png';
 
 export default function Sidebar({ 
   currentPath, 
@@ -183,16 +184,11 @@ export default function Sidebar({
             {/* Drawer Header */}
             <div className="px-5 py-4 border-b border-slate-200/80 dark:border-slate-800/80 flex items-center justify-between bg-slate-50/70 dark:bg-[#16181d]">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-xl bg-sky-50 dark:bg-sky-950/60 border border-sky-100 dark:border-sky-900/50 flex items-center justify-center text-[#087ea4] dark:text-[#149eca]">
-                  <svg className="w-5 h-5" viewBox="-11.5 -10.23174 23 20.46348">
-                    <circle cx="0" cy="0" r="2.05" fill="currentColor"/>
-                    <g stroke="currentColor" strokeWidth="1" fill="none">
-                      <ellipse rx="11" ry="4.2"/>
-                      <ellipse rx="11" ry="4.2" transform="rotate(60)"/>
-                      <ellipse rx="11" ry="4.2" transform="rotate(120)"/>
-                    </g>
-                  </svg>
-                </div>
+                <img 
+                  src={logoImg} 
+                  alt="Glory Study Logo" 
+                  className="w-9 h-9 rounded-xl object-contain shadow-sm" 
+                />
                 <div className="flex flex-col">
                   <span className="font-extrabold text-lg text-slate-900 dark:text-white leading-tight">
                     Glory Study
