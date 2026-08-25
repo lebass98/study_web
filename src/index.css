@@ -237,3 +237,31 @@ html {
 .animate-page-entry {
   animation: applePageFadeIn 0.25s ease-out forwards;
 }
+
+/* Mobile Slide In from Right (우측 -> 좌측 슬라이드 애니메이션) */
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInOverlay {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform;
+}
+
+.animate-fade-in {
+  animation: fadeInOverlay 0.22s ease-out forwards;
+}

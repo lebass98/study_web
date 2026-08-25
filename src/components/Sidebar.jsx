@@ -173,13 +173,13 @@ export default function Sidebar({
         <div className="fixed inset-0 z-50 md:hidden flex justify-end">
           {/* Semi-transparent Backdrop */}
           <div 
-            className="fixed inset-0 bg-slate-950/60 backdrop-blur-sm transition-opacity animate-in fade-in duration-200"
+            className="fixed inset-0 bg-slate-950/60 backdrop-blur-sm transition-opacity animate-fade-in"
             onClick={onCloseMobile}
             aria-hidden="true"
           />
 
-          {/* Slide-in Mobile Menu Panel from Top-Right */}
-          <aside className="relative w-[85vw] max-w-sm h-full bg-white dark:bg-[#121316] border-l border-slate-200/80 dark:border-slate-800/80 shadow-2xl z-10 flex flex-col animate-in slide-in-from-right duration-300 select-none">
+          {/* Slide-in Mobile Menu Panel from Right to Left (우측에서 좌측으로 슬라이드 인) */}
+          <aside className="fixed top-0 right-0 bottom-0 w-[85vw] max-w-sm h-full bg-white dark:bg-[#121316] border-l border-slate-200/80 dark:border-slate-800/80 shadow-2xl z-50 flex flex-col animate-slide-in-right select-none">
             {/* Drawer Header */}
             <div className="px-5 py-4 border-b border-slate-200/80 dark:border-slate-800/80 flex items-center justify-between bg-slate-50/70 dark:bg-[#16181d]">
               <div className="flex items-center gap-2.5">
