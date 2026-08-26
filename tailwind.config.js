@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontWeight: {
+        extrabold: '600',
+      },
       colors: {
         react: {
           light: '#087ea4',
