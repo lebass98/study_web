@@ -9,6 +9,7 @@ export default {
     extend: {
       fontWeight: {
         extrabold: '600',
+        bold: '600',
       },
       colors: {
         react: {
